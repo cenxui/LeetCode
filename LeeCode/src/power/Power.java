@@ -3,9 +3,11 @@ package power;
 public class Power {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		System.out.println(isPowerFour(1));
+		int x = 1;
+		for (int i = 1; i < 22; i++) {
+			System.out.println(x);
+			x = x*3;
+		}
 	}
 	
 	public static boolean isPowerTwo(int num) {
@@ -24,7 +26,28 @@ public class Power {
 		return false; 
 	}
 	
-//	public static boolean isPowerOfThree(int n) {
-//		
-//	}
+	public static boolean isPowerOfThree(int n) {
+		if ( n == 1 ) return true;
+		if ( n == 3 ) return true;
+		if ( n == 9 ) return true;	
+		if ( n == 27 ) return true;
+		if ( n == 81 ) return true;
+		if ( n == 243 ) return true;
+		if ( n == 729 ) return true;
+		if ( n == 2187) return true;
+		if ( n == 6561 ) return true;
+		if ( n == 19683 ) return true;
+		if ( n == 59049 ) return true;	
+		if ( n == 177147 ) return true;
+		if ( n == 531441 ) return true;
+		if ( n == 1594323 ) return true;
+		if ( n == 4782969 ) return true;
+		if ( n == 14348907) return true;
+		if ( n == 43046721 ) return true;
+		if ( n == 129140163 ) return true;
+		if ( n == 387420489 ) return true;
+		if ( n == 1162261467) return true;
+
+		return false;
+	}
 }
