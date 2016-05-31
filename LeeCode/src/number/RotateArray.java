@@ -11,6 +11,7 @@ public class RotateArray {
 			System.out.print(array[i]);
 		}
 	}
+	
 	public static void rotate(int[] nums, int k) {
 		int length = nums.length;
 		int[] result = new int[length];
