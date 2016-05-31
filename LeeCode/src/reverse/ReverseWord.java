@@ -18,7 +18,6 @@ public class ReverseWord {
 			return "";
 		}
 		
-		
 		StringBuilder stringBuilder = new StringBuilder(strings[strings.length -1]);
 		if (strings.length >2 ) {
 			for (int i = strings.length -2; i>0 ;i--) {

@@ -4,7 +4,7 @@ public class Reverse {
 
 	public static void main(String[] args) {
 //		System.out.println(reverseBit(43261596));
-		System.out.println(reverseInteger(-123));
+		System.out.println(reverseInteger(153155588));
 	}
 	
 	public static int reverseBit(int n) {
@@ -37,7 +37,5 @@ public class Reverse {
 		}
 		
 		return Integer.valueOf(String.valueOf(number)).intValue();
-		
-		
 	}
 }
