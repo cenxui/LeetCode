@@ -11,7 +11,6 @@ public class RotateArray {
 			System.out.print(array[i]);
 		}
 	}
-	
 	public static void rotate(int[] nums, int k) {
 		int length = nums.length;
 		int[] result = new int[length];
@@ -23,4 +22,19 @@ public class RotateArray {
 		System.arraycopy(result, 0,nums , 0, length);
     }
 	
+	
+	public static void rotatePrimeLength(int[] nums ,int k) {
+		int length = nums.length;
+		int tempX = nums[0];
+		int tempY = 0;
+		int positionX = 0;
+		int positionY = 0;
+        for (int i = 0; i < length ; i++ ) {
+        	positionY = (positionX+k)%length;
+        	tempY = nums[positionY];
+        	nums[positionY] = tempX;
+        	positionX = positionY;
+        	tempX = tempY;
+        }
+	}
 }
