@@ -4,7 +4,7 @@ public class Reverse {
 
 	public static void main(String[] args) {
 //		System.out.println(reverseBit(43261596));
-		System.out.println("result" +reverse(-2147483648));
+		System.out.println("result" +isPalindrome(12221));
 	}
 	
 	public static int reverseBit(int n) {
@@ -25,7 +25,7 @@ public class Reverse {
 		}else if (x == 0 ) {
 			return 0;
 		}else {
-			if (x == -Integer.MIN_VALUE) {
+			if (x == Integer.MIN_VALUE) {
 				return 0;
 			}
 			return -reverseABS(-x);
@@ -49,4 +49,21 @@ public class Reverse {
 		
 		return  (int)result;
 	}
+	
+	public static boolean isPalindrome(int x) {
+		if (x>0) {
+			if (x == reverseABS(x)) {
+				return true;
+			}else {
+				return false;
+			}
+		}else if (x == 0 ) {
+			return true;
+		}else {
+			if (x == -Integer.MIN_VALUE) {
+				return false;
+			}
+			return false;
+		}
+    }
 }
