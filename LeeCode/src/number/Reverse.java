@@ -4,7 +4,7 @@ public class Reverse {
 
 	public static void main(String[] args) {
 //		System.out.println(reverseBit(43261596));
-		System.out.println(reverseInteger(153155588));
+		System.out.println("result" +reverse(-2147483648));
 	}
 	
 	public static int reverseBit(int n) {
@@ -19,23 +19,34 @@ public class Reverse {
         return result;
 	}
 	
-	public static int reverseInteger(int n) {
-		if (n >= 0) {
-			return reverseUnsingInteger(n);
+	public static int reverse(int x) {
+		if (x>0) {
+			return reverseABS(x);
+		}else if (x == 0 ) {
+			return 0;
 		}else {
-			return reverseUnsingInteger(-1*n)*-1;
+			if (x == -Integer.MIN_VALUE) {
+				return 0;
+			}
+			return -reverseABS(-x);
 		}
 	}
 	
-	private static int reverseUnsingInteger(int n) {
-		char[] temp = String.valueOf(n).toCharArray();
+	private static int reverseABS(int n) {
+		long result = 0;
+		while (n>=10) {		
+			result += n%10;
+			n = n/10;
+			result *= 10;
+			System.out.println(result);
+		}
+
+		result = result + n;
 		
-		char[] number = new char[temp.length];
-		int tempPosition = temp.length-1; 
-		for (int i = 0;i <= tempPosition;i++) {
-			number[i] = temp[tempPosition - i];
+		if (result > Integer.MAX_VALUE) {			
+			return 0;
 		}
 		
-		return Integer.valueOf(String.valueOf(number)).intValue();
+		return  (int)result;
 	}
 }
