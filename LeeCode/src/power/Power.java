@@ -3,11 +3,16 @@ package power;
 public class Power {
 
 	public static void main(String[] args) {
-		int x = 1;
-		for (int i = 1; i < 22; i++) {
-			System.out.println(x);
-			x = x*3;
+		System.out.println(myPow(3, 5));
+	}
+	
+	public static double myPow(double x, int n) {
+		double result = 1;
+		for (int i = n; i>0; i>>= 1) {
+			
 		}
+		
+		return result;
 	}
 	
 	public static boolean isPowerTwo(int num) {
@@ -25,6 +30,8 @@ public class Power {
 		
 		return false; 
 	}
+	
+	
 	
 	public static boolean isPowerOfThree(int n) {
 		if ( n == 1 ) return true;
