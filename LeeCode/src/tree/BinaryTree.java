@@ -25,7 +25,7 @@ public class BinaryTree {
         return result.get(result.size()-1);
     }
 	
-	public static void deep(TreeNode treeNode ,int floor ,List<Integer> result) {
+	private static void deep(TreeNode treeNode ,int floor ,List<Integer> result) {
 		if (treeNode.left == null && treeNode.right == null) {
 			result.add(floor);
 			return;
@@ -42,6 +42,37 @@ public class BinaryTree {
 		}
 		deep(treeNode.left, floor+1, result);
 		deep(treeNode.right, floor+1, result);
+	}
+	
+	public static TreeNode invertTree(TreeNode root) {
+		if (root == null) {
+			return null;
+		}
+		invert(root);
+		return root;        
+    }
+	
+	private static void invert(TreeNode treeNode) {
+		if (treeNode.left == null && treeNode.right == null) {
+			return;
+		}
+		if (treeNode.left == null) {
+			treeNode.left = treeNode.right;
+			treeNode.right = null;
+			invert(treeNode.left);
+			return;
+		}
+		if (treeNode.right == null) {
+			treeNode.right = treeNode.left;
+			treeNode.left = null;
+			invert(treeNode.right);
+			return;
+		}
+		TreeNode temp = treeNode.right;
+		treeNode.right = treeNode.left;
+		treeNode.left = temp;
+		invert(treeNode.left);
+		invert(treeNode.right);
 	}
 	
 	public static class TreeNode {
