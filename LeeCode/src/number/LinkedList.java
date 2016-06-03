@@ -6,6 +6,12 @@ public class LinkedList {
 		
 
 	}
+	
+	/**
+	 * 
+	 * @param head input linked list
+	 * @return the reverse linked list
+	 */
 
 	public static ListNode reverseList(ListNode head) {
 		if (head == null) {
