@@ -62,6 +62,12 @@ public class BinaryTree {
 		return root;        
     }
 	
+	/**
+	 * 
+	 * @param p first tree is compared
+	 * @param q second tree is used to compare
+	 * @return true if both the same for all point and false for exiting at least one different point or value
+	 */
 	public static boolean isSameTree(TreeNode p, TreeNode q) {
 		if (p == null && q == null) {
 			return true;
