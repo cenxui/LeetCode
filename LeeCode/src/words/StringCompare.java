@@ -5,9 +5,23 @@ import java.util.Arrays;
 public class StringCompare {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		String a = "A";
+		System.out.println((int)a.toCharArray()[0]);
 
 	}
+	
+	public static int titleToNumber(String s) {
+		if (s == null || s.length() == 0) {
+			return 0;
+		}
+        char[] charS = s.toCharArray();
+        int result = 0;
+        for (int i = 0; i <charS.length; i++) {
+        	result = result*26;
+        	result = result + (int)charS[i]-40;
+        }
+        return result;
+    }
 	
 	public static boolean isAnagram(String s, String t) {
 		if (s == null && t == null) {
