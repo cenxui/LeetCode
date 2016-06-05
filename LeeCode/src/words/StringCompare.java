@@ -10,6 +10,12 @@ public class StringCompare {
 
 	}
 	
+	/**
+	 * excel table
+	 * @param s the title string
+	 * @return to the table integer
+	 */
+	
 	public static int titleToNumber(String s) {
 		if (s == null || s.length() == 0) {
 			return 0;
