@@ -79,7 +79,7 @@ public class LinkedList {
 	}
 
 	/**
-	 * deletDuplicates ListNode
+	 * deletDuplicates ListNode 
 	 * @param head 
 	 * @return deletDuplicates ListNod
 	 */
