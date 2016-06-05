@@ -4,6 +4,7 @@ public class Power {
 
 	public static void main(String[] args) {
 		System.out.println(myPow(3, 5));
+		
 	}
 	
 	public static double myPow(double x, int n) {
