@@ -4,7 +4,6 @@ public class DivideInteger {
 
 	public static void main(String[] args) {
 		long s = System.currentTimeMillis();
-		int n = 1;
 		System.out.println(divide(-2147483648,-2));
 		System.out.println("time" + (System.currentTimeMillis() - s));
 	}
