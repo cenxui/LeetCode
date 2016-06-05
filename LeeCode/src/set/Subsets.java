@@ -12,6 +12,11 @@ public class Subsets {
 		System.out.println(generate(5));
 	}
 	
+	/**
+	 * gerneate Pascal's Triangle
+	 * @param numRows the level of Pascal's Triangle
+	 * @return the Pascal's Triangle 
+	 */
 	public static List<List<Integer>> generate(int numRows) {
 		List<List<Integer>> resultList = new ArrayList<>();
 		List<Integer> rowList;
