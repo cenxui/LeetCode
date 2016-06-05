@@ -1,5 +1,8 @@
 package number;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class RotateArray {
 	
 
@@ -23,6 +26,20 @@ public class RotateArray {
 		System.arraycopy(result, 0,nums , 0, length);
     }
 	
+	
+	public static boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int check = Integer.MAX_VALUE;
+        
+        for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != check) {
+				check = nums[i];
+			}else {
+				return true;
+			}
+		}
+        return false;
+    }
 	
 	public static void rotatePrimeLength(int[] nums ,int k) {
 		int length = nums.length;
