@@ -13,6 +13,11 @@ public class BinaryTree {
 
 	}
 	
+	/**
+	 * give a tree and return the maxDepth floor
+	 * @param root the root of tree
+	 * @return the floor
+	 */
 	public static int maxDepth(TreeNode root) {
 		if (root == null) {
 			return 0;
@@ -44,12 +49,39 @@ public class BinaryTree {
 		deep(treeNode.right, floor+1, result);
 	}
 	
+	/**
+	 * revert tree form left node to right node and right node to left not recursively
+	 * @param root the tree root node
+	 * @return the reverted tree root node
+	 */
 	public static TreeNode invertTree(TreeNode root) {
 		if (root == null) {
 			return null;
 		}
 		invert(root);
 		return root;        
+    }
+	
+	public static boolean isSameTree(TreeNode p, TreeNode q) {
+		if (p == null && q == null) {
+			return true;
+		}
+		
+		if (p == null && q != null) {
+			return false;
+		}
+		
+		if (p != null && q == null) {
+			return false;
+		}
+		
+		
+		if (p.val != q.val) {
+			return false;
+		}
+		
+		return isSameTree(p.left, q.left)&& isSameTree(p.right, q.right);
+		
     }
 	
 	private static void invert(TreeNode treeNode) {
