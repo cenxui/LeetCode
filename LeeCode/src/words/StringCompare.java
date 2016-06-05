@@ -1,14 +1,39 @@
 package words;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class StringCompare {
 
 	public static void main(String[] args) {
 		String a = "A";
-		System.out.println((int)a.toCharArray()[0]);
+		System.out.println(convertToTitle(100));
 
 	}
+	
+	/**
+	 * 
+	 * @param n
+	 * @return
+	 */
+	
+	public static String convertToTitle(int n) {
+		if (n<=0) {
+			return "";
+		}
+        Stack<Integer> stack = new Stack<>();
+        while (n>0) {   
+        	n = n-1;
+			stack.push(Integer.valueOf(n%26+1));
+			n = n/26;
+		}
+        StringBuilder stringBuilder = new StringBuilder();
+        while (stack.isEmpty() == false) {
+			char s = (char)(stack.pop()+64);
+			stringBuilder.append(s);
+		}
+        return stringBuilder.toString();
+    }
 	
 	/**
 	 * excel table
@@ -24,7 +49,7 @@ public class StringCompare {
         int result = 0;
         for (int i = 0; i <charS.length; i++) {
         	result = result*26;
-        	result = result + (int)charS[i]-40;
+        	result = result + (int)charS[i]-64;
         }
         return result;
     }
