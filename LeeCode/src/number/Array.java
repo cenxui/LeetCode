@@ -1,19 +1,42 @@
 package number;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class Array {
 
 	public static void main(String[] args) {
-		int[] array = { 1, 2, 3, 3 ,4, 5, 6 };
+		int[] array = { 1, 1,2, 3, 3 ,4, 5, 6 };
 
-		System.out.println(removeElement(array, 3));
+		System.out.println(removeDuplicates(array));
 		for (int i = 0; i < array.length; i++) {
 			System.out.print(array[i]);
 		}
 	}
+	
+	/**
+	 * remove duplicates elements in array
+	 * @param nums the array we want to remove all duplicates
+	 * @return the elements number retain in array 
+	 */
+	
+	public static int removeDuplicates(int[] nums) {
+		if (nums.length == 0 || nums.length == 1) {
+			return nums.length;
+		}
+	
+		int check = Integer.MAX_VALUE;
+		int[] result = new int[nums.length];
+		int length = 0;
+        for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != check) {
+				result[length] = nums[i];
+				check = nums[i];
+				length++;
+			}
+		}
+        System.arraycopy(result, 0, nums, 0, length);
+        return length;
+    }
 	
 	/**
 	 * given a none zero and has a majority element that means more the n/2 
@@ -64,7 +87,15 @@ public class Array {
 		System.arraycopy(result, 0, nums, 0, length);
 	}
 
+	/**
+	 * check array whether include duplicate element
+	 * @param nums the none zero length array we want to check
+	 * @return true if it exists duplicate elements
+	 */
 	public static boolean containsDuplicate(int[] nums) {
+		if (nums.length == 0 || nums.length == 1) {
+			return false;
+		}
 		Arrays.sort(nums);
 		int check = Integer.MAX_VALUE;
 
@@ -77,6 +108,12 @@ public class Array {
 		}
 		return false;
 	}
+	
+	/**
+	 * the method only can be used in prime length array
+	 * @param nums the array we want to rotate
+	 * @param k the rotate step
+	 */
 
 	public static void rotatePrimeLength(int[] nums, int k) {
 		int length = nums.length;
