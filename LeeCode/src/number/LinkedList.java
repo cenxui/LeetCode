@@ -1,19 +1,57 @@
 package number;
 
+import java.util.Stack;
+
 public class LinkedList {
 
 	public static void main(String[] args) {
 
-		ListNode listNode = getListNode(1, 6);
-		// printLisNode(listNode);
-		ListNode resultNode = oddEvenList(listNode);
-		printLisNode(resultNode);
+		ListNode listNode = getListNode(1, 3);
+//		 printLisNode(listNode);
+		
+		printLisNode(rotateRight(listNode,1));
 	}
+	
+	/**
+	 * rotate to right
+	 * @param head the list we want to rotate
+	 * @param k the step we want
+	 * @return the list rotated
+	 */
+	
+	public static ListNode rotateRight(ListNode head, int k) {
+        ListNode check = head;
+        ListNode rotate = head;
+        ListNode lastNode = head;
+        if (k == 0) {
+        	return check;
+        }
+        
+        if (head == null) {
+        	return check;
+        }        
+        
+        int floor = 0;
+        Stack<ListNode> stack = new Stack<>();
+        while (head != null) {
+			stack.push(head);
+			lastNode = head;
+			head = head.next;
+			floor++;
+		}
+        k = k%floor;
+        for (int i = 0;i < k; i++) {
+        	rotate = stack.pop();
+        }
+        lastNode.next = check;
+        stack.pop().next = null;
+     
+        return rotate;
+    }
 
 	/**
 	 * 
-	 * @param head
-	 *            input linked list
+	 * @param head input linked list
 	 * @return the reverse linked list
 	 */
 
