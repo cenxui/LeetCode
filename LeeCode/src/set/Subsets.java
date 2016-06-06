@@ -79,6 +79,12 @@ public class Subsets {
         return resultList;
     }
 	
+	/**
+	 * list all the nums array subset
+	 * @param nums the universe set 
+	 * @return all the subsets
+	 */
+	
 	public static List<List<Integer>> subsets(int[] nums) {
 		Arrays.sort(nums);
 		List<List<Integer>> list = new ArrayList<>();
@@ -86,6 +92,14 @@ public class Subsets {
 		
         return list;
     }
+	
+	/**
+	 * 
+	 * @param list
+	 * @param index
+	 * @param nums
+	 * @param sublist
+	 */
 	
 	public static void subset(List<List<Integer>>  list, int index, int[] nums, List<Integer> sublist) {
 		if (index == nums.length) {
@@ -97,6 +111,12 @@ public class Subsets {
 			subset(list, index+1, nums, newList);
 		}
 	}
+	
+	/**
+	 * thess method is still unworkable do not use it
+	 * @param nums
+	 * @return
+	 */
 	
 	public static List<List<Integer>> threeSum(int[] nums) {
 		
