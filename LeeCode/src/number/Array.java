@@ -12,6 +12,7 @@ public class Array {
 			System.out.print(array[i]);
 		}
 	}
+
 	
 	/**
 	 * remove duplicates elements in array
