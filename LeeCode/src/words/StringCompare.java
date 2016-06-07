@@ -55,9 +55,9 @@ public class StringCompare {
 	
 	/**
 	 * check to string whether they are anagram
-	 * @param s
-	 * @param t
-	 * @return
+	 * @param s compared word
+	 * @param t compare word
+	 * @return true if anagram
 	 */
 	
 	public static boolean isAnagram(String s, String t) {
@@ -71,16 +71,17 @@ public class StringCompare {
 		if (s.length() != t.length()) {
 			return false;
 		}
+		
+		if (s.equals(t)) {
+			return false;
+		}
+		
 		char[] charS = s.toCharArray();
 		char[] charT = t.toCharArray();
 		
 		Arrays.sort(charS);
 		Arrays.sort(charT);
-		for (int i = 0; i<charS.length; i++) {
-			if (charS[i] != charT[i]) {
-				return false;
-			}
-		}
-        return true;
+
+        return Arrays.equals(charS, charT);
     }
 }
