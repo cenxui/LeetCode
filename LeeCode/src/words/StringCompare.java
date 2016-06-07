@@ -11,9 +11,9 @@ public class StringCompare {
 	}
 	
 	/**
-	 * 
-	 * @param n
-	 * @return
+	 * form integer to excel table value 
+	 * @param n the integer value
+	 * @return return the excel table string value
 	 */
 	
 	public static String convertToTitle(int n) {
@@ -52,6 +52,13 @@ public class StringCompare {
         }
         return result;
     }
+	
+	/**
+	 * check to string whether they are anagram
+	 * @param s
+	 * @param t
+	 * @return
+	 */
 	
 	public static boolean isAnagram(String s, String t) {
 		if (s == null && t == null) {
