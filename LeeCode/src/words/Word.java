@@ -10,6 +10,13 @@ public class Word {
 		System.out.println(wordPattern("blood", "b l o o d"));
 	}
 	
+	/**
+	 * check strings if isomorphic or not
+	 * @param s string compared
+	 * @param t string compare
+	 * @return true if they have same isomorphic structure
+	 */
+	
 	public static boolean isIsomorphic(String s, String t) {
 		if (s == null && t == null) {
 			return true;
@@ -60,6 +67,11 @@ public class Word {
 		return Arrays.equals(isomorphicString, isomorphicWord);
 	}
 
+	/**
+	 * get the isomorphic word type
+	 * @param word the word we want to isomorphic
+	 * @return the isomorphic structure
+	 */
 	public static int[] isomorphicWords(String[] word) {
 		int length = word.length;
 		int[] isomorphic = new int[length];
@@ -89,6 +101,12 @@ public class Word {
 		}
 		return isomorphic;
 	}
+	
+	/**
+	 * get the isomorphic string type
+	 * @param string the string we want to isomorphic
+	 * @return the isomorphic type
+	 */
 
 	public static int[] isomorphicString(String string) {
 		char[] stringChar = string.toCharArray();
