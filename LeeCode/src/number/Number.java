@@ -1,13 +1,55 @@
 package number;
 
+import java.util.ArrayList;
+
 public class Number {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		System.out.println(isHappy(3));
 
 	}
 	
-	public int romanToInt(String s) {
+	/**
+	 * check the number is happy or not
+	 * the process is endless or end in 1
+	 * @param n the number we ant to check
+	 * @return true if the number is happy
+	 */
+	
+	public static boolean isHappy(int n) {
+		ArrayList<Integer> arrayList;		
+		while (n>9) {
+			arrayList = new ArrayList<>();
+			while (n>0) {
+				arrayList.add((n%10));
+				n = n/10;
+			}		
+			n = square(arrayList);
+			System.out.println(n);
+		} 
+		
+		if (n == 1) {
+			return true;
+		}
+		
+		if (n == 7) {
+			return true;
+		}
+		
+        return false;
+    }
+	
+	private static int square(ArrayList<Integer> arrayList) {
+		int sum = 0;
+		int temp;
+		for (int i = 0; i<arrayList.size();i++) {
+			temp = arrayList.get(i);
+			sum = sum + temp*temp;
+		}
+		return sum;
+	}
+	
+	public static int romanToInt(String s) {
         int res=0;
         String[] c = {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
         int[] n = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
