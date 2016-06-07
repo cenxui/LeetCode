@@ -1,6 +1,6 @@
 package words;
 
-public class ReverseWord {
+public class Word {
 //	private static String words = "the sky is blue";
 	private static String words = " 1";
 	public static void main(String[] arg) {
