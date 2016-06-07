@@ -9,6 +9,32 @@ public class Word {
 	public static void main(String[] arg) {
 		System.out.println(wordPattern("blood", "b l o o d"));
 	}
+	
+	public static boolean isIsomorphic(String s, String t) {
+		if (s == null && t == null) {
+			return true;
+		}
+		
+		if (s == null|| t == null) {
+			return false;
+		}
+		
+		if (s.length() != t.length()) {
+			return false;
+		}
+		
+		if (s.length() == 0 && s.length() == t.length()) {
+			return true;
+		}
+		
+		if (s.length() == 1 && s.length() == t.length()) {
+			return true;
+		}
+		
+        int[] isomorphicS = isomorphicString(s);
+        int[] isomorphicT = isomorphicString(t);
+        return Arrays.equals(isomorphicS, isomorphicT);
+    }
 
 	public static boolean wordPattern(String pattern, String str) {
 		if (pattern == null && str == null) {
