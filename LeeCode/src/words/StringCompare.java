@@ -6,7 +6,6 @@ import java.util.Stack;
 public class StringCompare {
 
 	public static void main(String[] args) {
-		String a = "A";
 		System.out.println(convertToTitle(100));
 
 	}
