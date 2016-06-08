@@ -10,8 +10,20 @@ public class BinaryTree {
 		TreeNode treeNode = new TreeNode(1);
 		treeNode.left = new TreeNode(2);
 		System.out.println(maxDepth(treeNode));
-
+		
 	}
+	
+	public static int minDepth(TreeNode root) {
+        if (root == null) {
+			return 0;
+		}
+        
+        List<Integer> resultList = new ArrayList<>();
+        deep(root, 1, resultList);
+        Collections.sort(resultList);
+        return resultList.get(0);
+    }
+	
 	/**
 	 * get all the path on binary tree
 	 * @param root the root tree we want to get all paths
@@ -64,13 +76,18 @@ public class BinaryTree {
 		}
 		ArrayList<Integer> result = new ArrayList<>();
 		deep(root, 1, result);
-		System.out.println(result);
 		Collections.sort(result);
-		System.out.println(result);
         return result.get(result.size()-1);
     }
 	
-	private static void deep(TreeNode treeNode ,int floor ,List<Integer> result) {
+	/**
+	 * this method returns all the tree node length 
+	 * @param treeNode the tree node we want ot check
+	 * @param floor the begin floor of tree node
+	 * @param result the list contain all the tree node length
+	 */
+	
+	public static void deep(TreeNode treeNode ,int floor ,List<Integer> result) {
 		if (treeNode.left == null && treeNode.right == null) {
 			result.add(floor);
 			return;
