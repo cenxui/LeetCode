@@ -13,9 +13,9 @@ public class BinaryTree {
 
 	}
 	/**
-	 * 
-	 * @param root
-	 * @return
+	 * get all the path on binary tree
+	 * @param root the root tree we want to get all paths
+	 * @return the list contain all the tree point in string type
 	 */
 	public static List<String> binaryTreePaths(TreeNode root) {
 		List<String> resultList = new ArrayList<>();
