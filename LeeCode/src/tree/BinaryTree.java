@@ -13,6 +13,12 @@ public class BinaryTree {
 		
 	}
 	
+	/**
+	 * get the minimum tree node length of the root tree
+	 * @param root the tree node we want to check  
+	 * @return the minimum depth of the root tree
+	 */
+	
 	public static int minDepth(TreeNode root) {
         if (root == null) {
 			return 0;
