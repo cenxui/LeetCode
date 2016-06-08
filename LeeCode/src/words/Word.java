@@ -7,8 +7,27 @@ public class Word {
 	private static String words = " 1";
 
 	public static void main(String[] arg) {
-		System.out.println(wordPattern("blood", "b l o o d"));
+		System.out.println(lengthOfLastWord(" shi "));
 	}
+	
+	public static int lengthOfLastWord(String s) {
+        if (s == null || s.length() == 0) {
+			return 0;
+		}
+        
+        if (s.equals(" ")) {
+			return 0;
+		}
+        
+        String[] result = s.split(" ");
+        if (result.length == 0) {
+			return 0;
+		}
+        
+        System.out.println("array length" + result.length);
+        
+        return result[result.length-1].length();
+    }
 	
 	/**
 	 * check strings if isomorphic or not
