@@ -8,18 +8,50 @@ public class LinkedList {
 
 	public static void main(String[] args) {
 
-		ListNode listNode = getListNode(1, 2);
+		ListNode listNode = getListNode(1, 3);
 		printLisNode(listNode);
-//		listNode.next.val = 1;
-//		listNode.next.next.val = 1;
-//		listNode.next.next.next.next.val = 1;
-		System.out.println("refine");
-		printLisNode(listNode);
-		System.out.println("removeElements");
-		removeElements(listNode, 1);
-		 printLisNode(listNode);
+		System.out.println("swap");
+		printLisNode(swapPairs(listNode));
+
 		
 	}
+	
+	/**
+	 * swap pairs in list node
+	 * @param head the list node we want to swap
+	 * @return the list swapped
+	 */
+	
+	public static ListNode swapPairs(ListNode head) {
+		if (head == null) {
+			return null;
+		}
+		
+		if (head.next == null) {
+			return head;
+		}
+		
+		ListNode resultNode = head.next;//build the first link node		
+		ListNode tailNode = head.next.next;//restore third node
+		resultNode.next = head;//exchange first node to second node
+		resultNode.next.next = tailNode;//get back third node
+		ListNode headNode = resultNode.next; //restore the link Node
+		head = tailNode;	//get the next link node
+		
+		ListNode swapListNode;
+		while (head != null && head.next!= null) {
+			tailNode = head.next.next; //restore third node
+			swapListNode = head;//restore first node 
+			headNode.next = head.next; //previously second node to be first node
+			headNode.next.next = swapListNode; //previously first node to be second node
+			headNode.next.next.next = tailNode;//get back third node
+
+			headNode = head;//restore 
+			head = tailNode;//third node is the next exchange node			
+		}
+		
+		return resultNode;
+    }
 	
 	/**
 	 * remove all elements node equal val in head 
