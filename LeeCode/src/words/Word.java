@@ -10,6 +10,12 @@ public class Word {
 		System.out.println(lengthOfLastWord(" shi "));
 	}
 	
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
+	
 	public static int lengthOfLastWord(String s) {
         if (s == null || s.length() == 0) {
 			return 0;
