@@ -248,9 +248,7 @@ public class LinkedList {
 
 	/**
 	 * print the given list node to the last list node
-	 * 
-	 * @param listNode
-	 *            the head list node
+	 * @param listNode the head list node
 	 */
 
 	public static void printLisNode(ListNode head) {
@@ -261,10 +259,10 @@ public class LinkedList {
 	}
 
 	/**
-	 * 
-	 * @param from
-	 * @param to
-	 * @return
+	 * get the list range {@value from} between {@value to}
+	 * @param from the head node value
+	 * @param to the last node value
+	 * @return the list 
 	 */
 
 	public static ListNode getListNode(int from, int to) {
@@ -278,6 +276,12 @@ public class LinkedList {
 		}
 		return listNode;
 	}
+	
+	/**
+	 * This class is for the list node structure
+	 * @author xenxui
+	 *
+	 */
 
 	public static class ListNode {
 		int val;
