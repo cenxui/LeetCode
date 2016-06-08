@@ -12,6 +12,46 @@ public class BinaryTree {
 		System.out.println(maxDepth(treeNode));
 
 	}
+	/**
+	 * 
+	 * @param root
+	 * @return
+	 */
+	public static List<String> binaryTreePaths(TreeNode root) {
+		List<String> resultList = new ArrayList<>();
+        if (root == null) {
+			return resultList;
+		}
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(root.val);
+        getbinaryTreePaths(root, stringBuilder, resultList);
+        return resultList;
+    }
+	
+	private static void getbinaryTreePaths(TreeNode treeNode, StringBuilder stringBuilder, List<String> list) {
+		if (treeNode.left == null && treeNode.right == null) {
+			list.add(stringBuilder.toString());
+			return;
+		}
+		if (treeNode.left != null && treeNode.right == null) {
+			stringBuilder.append("->").append(treeNode.left.val);
+			getbinaryTreePaths(treeNode.left, stringBuilder, list);
+			return;
+		}
+		if (treeNode.left == null && treeNode.right != null) {
+			stringBuilder.append("->").append(treeNode.right.val);
+			getbinaryTreePaths(treeNode.right, stringBuilder, list);
+			return;
+		}
+		
+		StringBuilder stringBuilderLeft = new StringBuilder(stringBuilder.toString()); 		
+		stringBuilderLeft.append("->").append(treeNode.left.val);
+		getbinaryTreePaths(treeNode.left, stringBuilderLeft, list);
+
+		stringBuilder.append("->").append(treeNode.right.val);
+		getbinaryTreePaths(treeNode.right, stringBuilder, list);				
+		return;
+	}
 	
 	/**
 	 * give a tree and return the maxDepth floor
