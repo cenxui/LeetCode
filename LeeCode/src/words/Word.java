@@ -11,9 +11,9 @@ public class Word {
 	}
 	
 	/**
-	 * 
-	 * @param s
-	 * @return
+	 * get the lest word length of a sentence
+	 * @param s the sentence
+	 * @return the last word of sentence
 	 */
 	
 	public static int lengthOfLastWord(String s) {
