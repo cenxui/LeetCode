@@ -100,6 +100,13 @@ public class BinaryTree {
         return resultList;
     }
 	
+	/**
+	 * add all path tree node link to {@value list}
+	 * @param treeNode the tree node we want to add all link
+	 * @param stringBuilder previous tree node is contained in here before it got the end and add to list 
+	 * @param list contain all tree node link
+	 */
+	
 	private static void getbinaryTreePaths(TreeNode treeNode, StringBuilder stringBuilder, List<String> list) {
 		if (treeNode.left == null && treeNode.right == null) {
 			list.add(stringBuilder.toString());
