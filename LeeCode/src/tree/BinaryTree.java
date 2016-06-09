@@ -13,6 +13,46 @@ public class BinaryTree {
 		
 	}
 	
+	public static List<List<Integer>> levelOrderBottom(TreeNode root) {
+        return null;
+    }
+	
+	private static void name(TreeNode treeNode, List<List<Integer>> list,int floor) {
+		if (treeNode.left == null && treeNode.right == null) {
+			
+			return;
+		}	
+	}
+	
+	public static boolean hasPathSum(TreeNode root, int sum) {
+		if (root == null) {
+			return false;
+		}
+		List<Integer> result = new ArrayList<>();
+		addPahSum(root, 0 , result);
+		return result.contains(sum);
+	}
+	
+	private static void addPahSum(TreeNode treeNode, int sum, List<Integer> list) {
+		if (treeNode.left == null && treeNode.right == null) {
+			list.add(sum + treeNode.val);
+			return;
+		}
+		
+		if (treeNode.left != null && treeNode.right == null) {
+			addPahSum(treeNode.left, sum + treeNode.val, list);
+			return;
+		}
+		
+		if (treeNode.left == null && treeNode.right != null) {
+			addPahSum(treeNode.right, sum + treeNode.val, list);
+			return;
+		}
+		addPahSum(treeNode.left, sum + treeNode.val, list);
+		addPahSum(treeNode.right, sum + treeNode.val, list);		
+	}
+	
+	
 	/**
 	 * get the minimum tree node length of the root tree
 	 * @param root the tree node we want to check  
