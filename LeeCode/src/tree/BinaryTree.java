@@ -17,12 +17,15 @@ public class BinaryTree {
         return null;
     }
 	
-	private static void name(TreeNode treeNode, List<List<Integer>> list,int floor) {
-		if (treeNode.left == null && treeNode.right == null) {
-			
-			return;
-		}	
-	}
+	public static boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+			return true;
+		}
+        
+        TreeNode copyTree = copyTree(root);
+        invertTree(copyTree);
+        return isSameTree(copyTree, root);
+    }
 	
 	/**
 	 * check if tree node has same {@value sum} number
@@ -173,18 +176,40 @@ public class BinaryTree {
 		deep(treeNode.right, floor+1, result);
 	}
 	
-	/**
-	 * revert tree form left node to right node and right node to left not recursively
-	 * @param root the tree root node
-	 * @return the reverted tree root node
-	 */
-	public static TreeNode invertTree(TreeNode root) {
-		if (root == null) {
+	public static TreeNode copyTree(TreeNode treeNode) {
+		if (treeNode == null) {
 			return null;
 		}
-		invert(root);
-		return root;        
-    }
+		TreeNode result  = new TreeNode(treeNode.val);
+		copyTreeNode(result, treeNode);
+		return treeNode;
+	}
+	
+	private static void copyTreeNode(TreeNode copy, TreeNode treeNode) {
+		if (treeNode.left == null && treeNode.right == null ) {
+			return;
+		}
+		
+		if (treeNode.left != null && treeNode.right == null) {
+			TreeNode leftNode = new TreeNode(treeNode.left.val); 
+			copy.left = leftNode;
+			copyTreeNode(copy.left, treeNode.left );
+			return;
+		}
+		
+		if (treeNode.left == null && treeNode.right != null) {
+			copy.right = new TreeNode(treeNode.right.val);
+			copyTreeNode(copy.right, treeNode.right);
+			return;
+		}
+		 
+		copy.left = new TreeNode(treeNode.left.val);
+		copyTreeNode(copy.left, treeNode.left );
+
+		copy.right = new TreeNode(treeNode.right.val);
+		copyTreeNode(copy.right, treeNode.right);
+		return;
+	}
 	
 	/**
 	 * 
@@ -211,6 +236,19 @@ public class BinaryTree {
 		
 		return isSameTree(p.left, q.left)&& isSameTree(p.right, q.right);
 		
+    }
+	
+	/**
+	 * revert tree form left node to right node and right node to left not recursively
+	 * @param root the tree root node
+	 * @return the reverted tree root node
+	 */
+	public static TreeNode invertTree(TreeNode root) {
+		if (root == null) {
+			return null;
+		}
+		invert(root);
+		return root;        
     }
 	
 	/**
