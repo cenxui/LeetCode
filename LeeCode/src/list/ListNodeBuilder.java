@@ -24,7 +24,7 @@ public class ListNodeBuilder {
 		return this;
 	}
 	
-	public ListNode getListNode() {
+	public ListNode toListNode() {
 		return mListNode;
 	}
 }
