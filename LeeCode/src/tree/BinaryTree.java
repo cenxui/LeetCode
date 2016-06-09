@@ -9,13 +9,26 @@ public class BinaryTree {
 	public static void main(String[] args) {
 		TreeNode treeNode = new TreeNode(1);
 		treeNode.left = new TreeNode(2);
+		treeNode.right = new TreeNode(3);
+		treeNode.right.left = new TreeNode(5);
+		TreeNode treeNode2 = copyTree(treeNode);
+		
+		System.out.println(isSameTree(treeNode, treeNode2));
+		
 		System.out.println(maxDepth(treeNode));
+	
 		
 	}
 	
 	public static List<List<Integer>> levelOrderBottom(TreeNode root) {
         return null;
     }
+	
+	/**
+	 * check the tree is symmetric or not
+	 * @param root the tree node we want to check
+	 * @return true if it is symmetric
+	 */
 	
 	public static boolean isSymmetric(TreeNode root) {
         if (root == null) {
@@ -182,7 +195,7 @@ public class BinaryTree {
 		}
 		TreeNode result  = new TreeNode(treeNode.val);
 		copyTreeNode(result, treeNode);
-		return treeNode;
+		return result;
 	}
 	
 	private static void copyTreeNode(TreeNode copy, TreeNode treeNode) {
@@ -191,8 +204,7 @@ public class BinaryTree {
 		}
 		
 		if (treeNode.left != null && treeNode.right == null) {
-			TreeNode leftNode = new TreeNode(treeNode.left.val); 
-			copy.left = leftNode;
+			copy.left = new TreeNode(treeNode.left.val); 
 			copyTreeNode(copy.left, treeNode.left );
 			return;
 		}
