@@ -1,5 +1,7 @@
 package list;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import org.junit.Ignore;
@@ -8,11 +10,60 @@ public class LinkedList {
 
 	public static void main(String[] args) {
 
-		ListNode listNode = ListUtil.getListNode(1, 3);
-		listNode.next.val = 1;
-		System.out.println("isPalindrome");
-		System.out.println(isPalindrome(listNode));
+		ListNode listNode = ListUtil.getListNode(1, 8);
 		
+		System.out.println("removeNthFromEnd");
+		
+		removeNthFromEnd(listNode,1);
+		
+		ListUtil.printLisNode(listNode);
+	}
+
+	public static ListNode removeNthFromEnd(ListNode head, int n) {
+		if (head == null) {
+			return null;
+		}
+
+		if (n <= 0) {
+			return head;
+		}
+
+		List<ListNode> resultList = new ArrayList<>();
+		while (head != null) {
+			resultList.add(head);
+			head = head.next;
+		}
+		
+		
+
+		int length = resultList.size();
+		if (length < n) {
+			return resultList.get(0);
+		}
+
+		if (length == 1 && n == 1) {
+			return null;
+		}
+		
+		if (n == 1) {
+			resultList.get(length-2).next = null;
+			return resultList.get(0);
+		}
+		
+		if (length == 2 && n == 2) {		
+			return resultList.get(1);
+		}
+		
+
+		if (length == n) {
+			resultList.get(0).val = resultList.get(1).val;
+			resultList.get(0).next = resultList.get(2);
+			return resultList.get(0);
+		}
+
+		resultList.get(length - n - 1).next = resultList.get(length - n + 1);
+
+		return resultList.get(0);
 	}
 
 	/**
@@ -89,8 +140,9 @@ public class LinkedList {
 
 	/**
 	 * this method with low efficiency and need to be improve to be accepted
+	 * 
 	 * @param head
-	 * @return 
+	 * @return
 	 */
 
 	public static boolean hasCycle(ListNode head) {
@@ -116,7 +168,6 @@ public class LinkedList {
 	public static ListNode getCycleListNode(ListNode listNode) {
 		return null;
 	}
-
 
 	/**
 	 * 
@@ -201,5 +252,5 @@ public class LinkedList {
 		}
 
 		return resultNode;
-	}	
+	}
 }
