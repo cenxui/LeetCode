@@ -213,6 +213,11 @@ public class BinaryTree {
 		
     }
 	
+	/**
+	 * invert the tree nod that means right to left and left to right
+	 * @param treeNode the tree node we want to invert
+	 */
+	
 	private static void invert(TreeNode treeNode) {
 		if (treeNode.left == null && treeNode.right == null) {
 			return;
@@ -235,6 +240,12 @@ public class BinaryTree {
 		invert(treeNode.left);
 		invert(treeNode.right);
 	}
+	
+	/**
+	 * TreeNode class is standard tree node type
+	 * @author xenxui
+	 *
+	 */
 	
 	public static class TreeNode {
 		private int val;
