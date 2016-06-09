@@ -24,6 +24,13 @@ public class BinaryTree {
 		}	
 	}
 	
+	/**
+	 * check if tree node has same {@value sum} number
+	 * @param root the tree node we want to check
+	 * @param sum the value we want to check if the tree node has the path sum 
+	 * @return tree if the tree node has the path sum
+	 */
+	
 	public static boolean hasPathSum(TreeNode root, int sum) {
 		if (root == null) {
 			return false;
@@ -32,6 +39,13 @@ public class BinaryTree {
 		addPahSum(root, 0 , result);
 		return result.contains(sum);
 	}
+	
+	/**
+	 * add all path sum of tree node to list
+	 * @param treeNode the tree node we want to add path sum
+	 * @param sum the value of all sum
+	 * @param list the list contain all result
+	 */
 	
 	private static void addPahSum(TreeNode treeNode, int sum, List<Integer> list) {
 		if (treeNode.left == null && treeNode.right == null) {
