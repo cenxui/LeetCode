@@ -1,14 +1,36 @@
 package words;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 public class StringCompare {
-
 	public static void main(String[] args) {
-		System.out.println(convertToTitle(100));
-
+		System.out.println(reverseVowels("A man a plan a canal: Panama"));
 	}
+	
+	public static String reverseVowels(String s) {
+		char[] vowls = {'a','e','i','o','u','A','E','I','O','U'};
+		char[] charS = s.toCharArray();
+		List<Integer> list = new ArrayList<>();
+		for (int i = 0; i < charS.length; i++) {
+			for (int j = 0; j < vowls.length; j++) {
+				if (charS[i] == vowls[j]) {
+					list.add(i);
+					break;
+				}
+			}
+		}
+		char temp;
+		for (int i = 0; i < list.size()/2; i++) {
+			temp = charS[list.get(i)];
+			charS[list.get(i)] = charS[list.get(list.size()-i-1)];
+			charS[list.get(list.size()-i-1)] = temp;
+		}
+		
+        return new String(charS);
+    }
 	
 	/**
 	 * form integer to excel table value 
