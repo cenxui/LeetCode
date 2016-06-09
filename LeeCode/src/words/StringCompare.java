@@ -10,6 +10,12 @@ public class StringCompare {
 		System.out.println(reverseVowels("A man a plan a canal: Panama"));
 	}
 	
+	/**
+	 * reverse vowels is string 
+	 * @param s the string we want to reverse vowels
+	 * @return the string vowels reversed
+	 */
+	
 	public static String reverseVowels(String s) {
 		char[] vowls = {'a','e','i','o','u','A','E','I','O','U'};
 		char[] charS = s.toCharArray();
