@@ -1,4 +1,4 @@
-package number;
+package list;
 
 import java.util.Stack;
 
@@ -9,57 +9,95 @@ public class LinkedList {
 	public static void main(String[] args) {
 
 		ListNode listNode = getListNode(1, 3);
+		listNode.next.val = 1;
 		printLisNode(listNode);
-		System.out.println("swap");
-		printLisNode(swapPairs(listNode));
-
+		System.out.println("isPalindrome");
+		System.out.println(isPalindrome(listNode));
 		
 	}
-	
+
+	/**
+	 * 
+	 * @param head
+	 * @return
+	 */
+
+	public static boolean isPalindrome(ListNode head) {
+		if (head == null || head.next == null) {
+			return true;
+		}
+
+		int depth = 1;
+		ListNode checkNode = head;
+		Stack<Integer> stack = new Stack<>();
+
+		while (checkNode != null) {
+			stack.push(checkNode.val);
+			depth++;
+			checkNode = checkNode.next;
+		}
+		checkNode = head;
+
+		for (int i = 0; i < depth / 2; i++) {
+			if (stack.pop() != checkNode.val) {
+				return false;
+			}
+			checkNode = checkNode.next;
+		}
+		return true;
+	}
+
 	/**
 	 * swap pairs in list node
-	 * @param head the list node we want to swap
+	 * 
+	 * @param head
+	 *            the list node we want to swap
 	 * @return the list swapped
 	 */
-	
+
 	public static ListNode swapPairs(ListNode head) {
 		if (head == null) {
 			return null;
 		}
-		
+
 		if (head.next == null) {
 			return head;
 		}
-		
-		ListNode resultNode = head.next;//build the first link node		
-		ListNode tailNode = head.next.next;//restore third node
-		resultNode.next = head;//exchange first node to second node
-		resultNode.next.next = tailNode;//get back third node
-		ListNode headNode = resultNode.next; //restore the link Node
-		head = tailNode;	//get the next link node
-		
-		ListNode swapListNode;
-		while (head != null && head.next!= null) {
-			tailNode = head.next.next; //restore third node
-			swapListNode = head;//restore first node 
-			headNode.next = head.next; //previously second node to be first node
-			headNode.next.next = swapListNode; //previously first node to be second node
-			headNode.next.next.next = tailNode;//get back third node
 
-			headNode = head;//restore 
-			head = tailNode;//third node is the next exchange node			
+		ListNode resultNode = head.next;// build the first link node
+		ListNode tailNode = head.next.next;// restore third node
+		resultNode.next = head;// exchange first node to second node
+		resultNode.next.next = tailNode;// get back third node
+		ListNode headNode = resultNode.next; // restore the link Node
+		head = tailNode; // get the next link node
+
+		ListNode swapListNode;
+		while (head != null && head.next != null) {
+			tailNode = head.next.next; // restore third node
+			swapListNode = head;// restore first node
+			headNode.next = head.next; // previously second node to be first
+										// node
+			headNode.next.next = swapListNode; // previously first node to be
+												// second node
+			headNode.next.next.next = tailNode;// get back third node
+
+			headNode = head;// restore
+			head = tailNode;// third node is the next exchange node
 		}
-		
+
 		return resultNode;
-    }
-	
+	}
+
 	/**
-	 * remove all elements node equal val in head 
-	 * @param head the listNode we want to check
-	 * @param val the value we want to remove
+	 * remove all elements node equal val in head
+	 * 
+	 * @param head
+	 *            the listNode we want to check
+	 * @param val
+	 *            the value we want to remove
 	 * @return the list node with no node value equal val
 	 */
-	
+
 	public static ListNode removeElements(ListNode head, int val) {
 		ListNode result = head;
 		if (result == null) {
@@ -68,45 +106,46 @@ public class LinkedList {
 		while (head.next != null) {
 			if (head.next.val == val) {
 				head.next = head.next.next;
-			}else {
+			} else {
 				head = head.next;
-			}			
+			}
 		}
-		
+
 		if (result.val == val && result.next == null) {
 			result = null;
 			return result;
 		}
-		
+
 		if (result.val == val && result.next != null) {
 			result.val = result.next.val;
 			result.next = result.next.next;
 		}
-		
-		return result;        
-    }
-	
+
+		return result;
+	}
+
 	/**
 	 * this method with low efficiency and need to be improve to be accepted
 	 * @param head
-	 * @return
+	 * @return 
 	 */
-	
+
 	public static boolean hasCycle(ListNode head) {
 		ListNode check = head;
-		
-        while (head != null) {
-        	head = head.next;
+
+		while (head != null) {
+			head = head.next;
 			if (head == check) {
 				return true;
 			}
 			head = head.next;
 		}
-        return false;
-    }
-	
+		return false;
+	}
+
 	/**
 	 * still need to program
+	 * 
 	 * @param listNode
 	 * @return
 	 */
@@ -114,47 +153,51 @@ public class LinkedList {
 	public static ListNode getCycleListNode(ListNode listNode) {
 		return null;
 	}
-	
+
 	/**
 	 * rotate to right
-	 * @param head the list we want to rotate
-	 * @param k the step we want
+	 * 
+	 * @param head
+	 *            the list we want to rotate
+	 * @param k
+	 *            the step we want
 	 * @return the list rotated
 	 */
-	
+
 	public static ListNode rotateRight(ListNode head, int k) {
-        ListNode check = head;
-        ListNode rotate = head;
-        ListNode lastNode = head;
-        if (k == 0) {
-        	return check;
-        }
-        
-        if (head == null) {
-        	return check;
-        }        
-        
-        int floor = 0;
-        Stack<ListNode> stack = new Stack<>();
-        while (head != null) {
+		ListNode check = head;
+		ListNode rotate = head;
+		ListNode lastNode = head;
+		if (k == 0) {
+			return check;
+		}
+
+		if (head == null) {
+			return check;
+		}
+
+		int floor = 0;
+		Stack<ListNode> stack = new Stack<>();
+		while (head != null) {
 			stack.push(head);
 			lastNode = head;
 			head = head.next;
 			floor++;
 		}
-        k = k%floor;
-        for (int i = 0;i < k; i++) {
-        	rotate = stack.pop();
-        }
-        lastNode.next = check;
-        stack.pop().next = null;
-     
-        return rotate;
-    }
+		k = k % floor;
+		for (int i = 0; i < k; i++) {
+			rotate = stack.pop();
+		}
+		lastNode.next = check;
+		stack.pop().next = null;
+
+		return rotate;
+	}
 
 	/**
 	 * 
-	 * @param head input linked list
+	 * @param head
+	 *            input linked list
 	 * @return the reverse linked list
 	 */
 
@@ -220,23 +263,24 @@ public class LinkedList {
 	}
 
 	/**
-	 * deletDuplicates ListNode 
-	 * @param head 
+	 * deletDuplicates ListNode
+	 * 
+	 * @param head
 	 * @return deletDuplicates ListNod
 	 */
-	public static ListNode deleteDuplicates(ListNode head) {		
+	public static ListNode deleteDuplicates(ListNode head) {
 		if (head == null) {
 			return head;
 		}
-		
+
 		ListNode resultNode = head;
 		ListNode checkNode;
 		int headValue;
 
-		while (head!= null) {
+		while (head != null) {
 			headValue = head.val;
 			checkNode = head;
-			while (checkNode != null&& headValue == checkNode.val ) {
+			while (checkNode != null && headValue == checkNode.val) {
 				checkNode = checkNode.next;
 			}
 			head.next = checkNode;
@@ -248,7 +292,9 @@ public class LinkedList {
 
 	/**
 	 * print the given list node to the last list node
-	 * @param listNode the head list node
+	 * 
+	 * @param listNode
+	 *            the head list node
 	 */
 
 	public static void printLisNode(ListNode head) {
@@ -260,9 +306,12 @@ public class LinkedList {
 
 	/**
 	 * get the list range {@value from} between {@value to}
-	 * @param from the head node value
-	 * @param to the last node value
-	 * @return the list 
+	 * 
+	 * @param from
+	 *            the head node value
+	 * @param to
+	 *            the last node value
+	 * @return the list
 	 */
 
 	public static ListNode getListNode(int from, int to) {
@@ -276,9 +325,10 @@ public class LinkedList {
 		}
 		return listNode;
 	}
-	
+
 	/**
 	 * This class is for the list node structure
+	 * 
 	 * @author xenxui
 	 *
 	 */

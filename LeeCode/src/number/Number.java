@@ -11,7 +11,8 @@ public class Number {
 	
 	/**
 	 * check the number is happy or not
-	 * the process is endless or end in 1
+	 * the process is endless or end in 1 
+	 * if number lower than 10 it can be check if it is happy or not
 	 * @param n the number we ant to check
 	 * @return true if the number is happy
 	 */
