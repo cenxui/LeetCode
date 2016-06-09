@@ -24,6 +24,10 @@ public class ListUtil {
 		}
 		return listNode;
 	}
+	
+	public static ListNodeBuilder getListNodeBuilder() {	
+		return new ListNodeBuilder();
+	}
 
 	/**
 	 * remove all elements node equal val in head
