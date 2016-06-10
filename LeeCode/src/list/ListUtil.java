@@ -85,6 +85,10 @@ public class ListUtil {
 	 */
 
 	public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+		
+		/*
+		 * check all possible null point case
+		 */
 		if (l1 == null && l2 == null) {
 			return null;
 		}
@@ -96,6 +100,10 @@ public class ListUtil {
 		if (l1 == null && l2 != null) {
 			return l2;
 		}
+		
+		/*
+		 * let l1 be the head node 
+		 */
 
 		ListNode result = l1;
 
@@ -116,11 +124,10 @@ public class ListUtil {
 				check = l1;
 				l1 = l1.next;
 			} else {
-				l1 = check.next; //store l1
-				check.next = l2;//		
+				check.next = l2;		
 				l2 = l2.next;
 				check.next.next = l1;				
-				check = check.next;
+				check = check.next;			
 			}
 		}
 		/**
