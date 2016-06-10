@@ -3,6 +3,18 @@ package list;
 import java.util.Stack;
 
 public class ListUtil {
+	
+	public static void main(String[] args) {
+
+		ListNode listNode = getListNode(5, 6);
+//		ListUtil.printLisNode(listNode);
+		ListNode l2 = getListNodeBuilder().append(1).append(2).append(3).append(4).toListNode();
+//		ListUtil.printLisNode(l2);
+		ListNode result = mergeTwoLists(listNode, l2);
+		
+		ListUtil.printLisNode(result);
+	}
+
 	/**
 	 * get the list range {@value from} between {@value to}
 	 * 
@@ -24,8 +36,8 @@ public class ListUtil {
 		}
 		return listNode;
 	}
-	
-	public static ListNodeBuilder getListNodeBuilder() {	
+
+	public static ListNodeBuilder getListNodeBuilder() {
 		return new ListNodeBuilder();
 	}
 
@@ -62,6 +74,63 @@ public class ListUtil {
 			result.next = result.next.next;
 		}
 
+		return result;
+	}
+	
+	/**
+	 * 
+	 * @param l1
+	 * @param l2
+	 * @return
+	 */
+
+	public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+		if (l1 == null && l2 == null) {
+			return null;
+		}
+
+		if (l1 != null && l2 == null) {
+			return l1;
+		}
+
+		if (l1 == null && l2 != null) {
+			return l2;
+		}
+
+		ListNode result = l1;
+
+		if (l1.val >= l2.val) {
+			l1 = l2;
+			l2 = result;
+			result = l1;
+		}
+
+		if (l1.next == null) {
+			l1.next = l2;
+			return result;
+		}
+		ListNode check = l1;
+		l1 = l1.next;
+		while (l1 != null && l2 != null) {
+			if (l1.val <= l2.val) {
+				check = l1;
+				l1 = l1.next;
+			} else {
+				l1 = check.next; //store l1
+				check.next = l2;//		
+				l2 = l2.next;
+				check.next.next = l1;				
+				check = check.next;
+			}
+		}
+		/**
+		 * If l1 check complete but l2 don't start check
+		 * ,we need to add l2 to the list tail of l1.
+		 */
+		if (l1 == null && l2 != null) {
+			check.next = l2;
+		}
+		
 		return result;
 	}
 
@@ -104,22 +173,25 @@ public class ListUtil {
 
 		return rotate;
 	}
-	
+
 	/**
 	 * delete node in list node
-	 * @param node 
-	 * 		the list node we want to remove
+	 * 
+	 * @param node
+	 *            the list node we want to remove
 	 */
 
 	public static void deleteNode(ListNode node) {
 		node.val = node.next.val;
 		node.next = node.next.next;
 	}
-	
+
 	/**
 	 * add node in list node
-	 * @param node {@value addNode} next to this node
-	 * @param addNode 
+	 * 
+	 * @param node
+	 *            {@value addNode} next to this node
+	 * @param addNode
 	 */
 
 	public static void addNode(ListNode node, ListNode addNode) {
