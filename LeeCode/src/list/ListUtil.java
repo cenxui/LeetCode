@@ -78,10 +78,10 @@ public class ListUtil {
 	}
 	
 	/**
-	 * 
-	 * @param l1
-	 * @param l2
-	 * @return
+	 * merge to two sorted arrays to one sorted array 
+	 * @param l1 sorted array
+	 * @param l2 sorted array
+	 * @return one sorted array contain {@value l1,l2} list node
 	 */
 
 	public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
