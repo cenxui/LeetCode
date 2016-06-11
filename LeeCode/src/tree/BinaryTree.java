@@ -20,9 +20,74 @@ public class BinaryTree {
 		
 	}
 	
-	public static List<List<Integer>> levelOrderBottom(TreeNode root) {
-        return null;
+	/**
+	 * 
+	 * @param root
+	 * @return
+	 */
+	
+	public static List<List<Integer>> levelOrder(TreeNode root) {
+		List<List<Integer>> result = new ArrayList<>();
+		if (root == null) {
+			return result;
+		}
+		List<Integer> list = new ArrayList<>();
+		list.add(root.val);
+		result.add(list);
+		addTree(result, root,1);
+        return result;
     }
+	
+	private static void addTree(List<List<Integer>> result, TreeNode treeNode, int depth) {
+		if (treeNode.left == null && treeNode.right == null) {
+			return;
+		}
+		
+		if (treeNode.left != null && treeNode.right == null) {
+			if (result.size() > depth) {
+				List<Integer> list = result.get(depth);
+				list.add(treeNode.left.val);
+			}else {
+				List<Integer> list = new ArrayList<>();
+				list.add(treeNode.left.val);
+				result.add(list);
+			}
+			depth++;
+			addTree(result, treeNode.left, depth);
+			return;
+		}
+		
+		if (treeNode.left == null && treeNode.right != null) {
+			;
+			if (result.size() > depth) {
+				List<Integer> list = result.get(depth);
+				list.add(treeNode.right.val);
+			}else {
+				List<Integer> list = new ArrayList<>();
+				list.add(treeNode.right.val);
+				result.add(list);
+			}
+			depth++;
+			addTree(result, treeNode.right,depth);
+			return;
+		}
+		
+		if (result.size() > depth) {
+			List<Integer> list = result.get(depth);
+			list.add(treeNode.left.val);
+			list.add(treeNode.right.val);
+		}else {
+			List<Integer> list = new ArrayList<>();
+			list.add(treeNode.left.val);
+			list.add(treeNode.right.val);
+			result.add(list);
+		}
+		
+		depth++;
+		addTree(result, treeNode.left, depth);
+		addTree(result, treeNode.right, depth);
+		return;	
+	}
 	
 	/**
 	 * check the tree is symmetric or not
