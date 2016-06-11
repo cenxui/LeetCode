@@ -15,8 +15,19 @@ public class BinaryTree {
 		
 		System.out.println(isSameTree(treeNode, treeNode2));
 		
-		System.out.println(maxDepth(treeNode));
+		System.out.println(maxDepth(treeNode));		
+	}
 	
+	public List<List<Integer>> levelOrderBottom(TreeNode root) {
+		List<List<Integer>> result = new ArrayList<>();
+		if (root == null) {
+			return result;
+		}
+		
+		return result;
+    }	
+	
+	private static void addTree() {
 		
 	}
 	
@@ -37,6 +48,13 @@ public class BinaryTree {
 		addTree(result, root,1);
         return result;
     }
+	
+	/**
+	 * the method is used for {@code levelOrder()}
+	 * @param result the list contain all depth of tree value
+	 * @param treeNode the tree node we want to check
+	 * @param depth the depth of leaves form the root
+	 */
 	
 	private static void addTree(List<List<Integer>> result, TreeNode treeNode, int depth) {
 		if (treeNode.left == null && treeNode.right == null) {
