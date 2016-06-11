@@ -35,10 +35,32 @@ public class BinaryTree {
 			return true;
 		}
         
-        TreeNode copyTree = copyTree(root);
-        invertTree(copyTree);
-        return isSameTree(copyTree, root);
+        return checkSymmetric(root.left, root.right);
     }
+	
+	/**
+	 * check symmetric
+	 * @param left left tree
+	 * @param right right tree
+	 * @return true if they are symmetric
+	 */
+	
+	private static boolean checkSymmetric(TreeNode left, TreeNode right) {
+		if (left == null && right == null) {
+			return true;
+		}
+		if (left != null && right == null) {
+			return false;
+		}
+		if (left == null && right != null) {
+			return false;
+		}
+		if (left.val != right.val) {
+			return false;
+		}
+		return checkSymmetric(left.left, right.right) && checkSymmetric(left.right, right.left);
+	}
+	
 	
 	/**
 	 * check if tree node has same {@value sum} number
