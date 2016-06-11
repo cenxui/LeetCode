@@ -58,7 +58,6 @@ public class BinaryTree {
 		}
 		
 		if (treeNode.left == null && treeNode.right != null) {
-			;
 			if (result.size() > depth) {
 				List<Integer> list = result.get(depth);
 				list.add(treeNode.right.val);
