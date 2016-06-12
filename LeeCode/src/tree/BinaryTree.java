@@ -3,6 +3,7 @@ package tree;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 
 public class BinaryTree {
 
@@ -18,18 +19,22 @@ public class BinaryTree {
 		System.out.println(maxDepth(treeNode));		
 	}
 	
-	public List<List<Integer>> levelOrderBottom(TreeNode root) {
-		List<List<Integer>> result = new ArrayList<>();
+	public static List<List<Integer>> levelOrderBottom(TreeNode root) {
+		List<List<Integer>> result = new Stack<>();
 		if (root == null) {
 			return result;
 		}
 		
-		return result;
+		List<Integer> list = new ArrayList<>();
+		list.add(root.val);
+		result.add(list);
+		addTree(result, root, 1);	
+		List<List<Integer>> newResult = new ArrayList<>();
+		for (int i = result.size()-1; i >=0; i--) {
+			newResult.add(result.get(i));
+		}
+		return newResult;
     }	
-	
-	private static void addTree() {
-		
-	}
 	
 	/**
 	 * 
