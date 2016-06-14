@@ -14,6 +14,12 @@ public class StringCompare {
 
 	}
 	
+	/**
+	 * get string add return the possible IP addresses 
+	 * @param s the string we want to check
+	 * @return get the all possible IP addresses
+	 */
+	
 	public static List<String> restoreIpAddresses(String s) {
 		if (s == null) {
 			return null;
