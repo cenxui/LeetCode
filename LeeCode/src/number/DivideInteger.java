@@ -7,7 +7,12 @@ public class DivideInteger {
 		System.out.println(divide(-2147483648,-2));
 		System.out.println("time" + (System.currentTimeMillis() - s));
 	}
-	
+	/**
+	 * divide integer with no divide and multiple method 
+ 	 * @param dividend
+	 * @param divisor
+	 * @return
+	 */
 	public static int divide(int dividend, int divisor) {
 		if (divisor == 0) return Integer.MAX_VALUE;
 		if (dividend == 0) return 0;
