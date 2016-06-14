@@ -9,6 +9,11 @@ public class Number {
 
 	}
 	
+	/**
+	 * This method is to get how many zeroes we get in n!
+	 * @param n the number to get n!
+	 * @return the zeroes in n!
+	 */
 	public static int trailingZeroes(int n) {
 		int result = 0;
 		while (n>0) {
