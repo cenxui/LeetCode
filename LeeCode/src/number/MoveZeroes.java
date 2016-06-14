@@ -10,6 +10,10 @@ public class MoveZeroes {
 		}
 	}
 	
+	/**
+	 * remove zeroes in array
+	 * @param nums
+	 */
 	public static void moveZeroes(int[] nums) {
         int[] result = new int[nums.length];
         int noneZero = 0;
