@@ -22,6 +22,12 @@ public class Power {
 		return result;
 	}
 	
+	/**
+	 * check if the number is power of two
+	 * @param num the number we want to check
+	 * @return true if the number is power of two
+	 */
+	
 	public static boolean isPowerTwo(int num) {
 		return num <= 0 ? false:(num & (num-1)) == 0;
 	}
