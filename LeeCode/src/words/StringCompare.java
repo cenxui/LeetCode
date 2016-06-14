@@ -2,16 +2,83 @@ package words;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 
 public class StringCompare {
 	public static void main(String[] args) {
-		System.out.println(compareVersion("1.01", "01.1.0.1"));
+		
 		// char[] chars = {'1'};
-		// System.out.println(charsToInteger(chars));
+		System.out.println(restoreIpAddresses("1124111"));
 
 	}
+	
+	public static List<String> restoreIpAddresses(String s) {
+		if (s == null) {
+			return null;
+		}
+		
+		List<String> result = new ArrayList<>();
+		if (s.length() < 4) {
+			return result;
+		}
+		
+		for(int i = 1; i<4; i++) {
+			for (int j = i+1; j < i+4 && j < s.length()-1; j++) {
+				for (int k = j+1; k<j+4&&k < s.length(); k++) {
+					int[] distribution = new int[3];
+					distribution[0] = i;
+					distribution[1] = j;
+					distribution[2] = k;
+					addList(s, distribution, result);
+				}
+			}
+		}
+				
+		return result;
+    }
+
+	private static void addList(String s,int[] distribution , List<String> result) {
+		if (s.length() - distribution[2]>3) {
+			return; 
+		}
+		String string1 = s.substring(0,distribution[0]);
+		String string2 = s.substring(distribution[0],distribution[1]);
+		String string3 = s.substring(distribution[1],distribution[2]);
+		String string4 = s.substring(distribution[2]);
+		
+		if (string1.length()>1&&string1.startsWith("0")) {
+			return;
+		}
+		if (string2.length()>1&&string2.startsWith("0")) {
+			return;
+		}
+		if (string3.length()>1&&string3.startsWith("0")) {
+			return;
+		}
+		if (string4.length()>1&&string4.startsWith("0")) {
+			return;
+		}
+		
+		
+		if (string1.length() == 3 && Integer.valueOf(string1)>255) {
+			return;
+		}else if (string2.length() == 3 && Integer.valueOf(string2)>255) {
+			return;
+		}else if (string3.length() == 3 && Integer.valueOf(string3)>255) {
+			return;
+		}else if (string4.length() == 3 && Integer.valueOf(string4)>255) {
+			return;
+		}
+		
+		result.add(new StringBuilder().append(string1)
+				.append(".").append(string2)
+				.append(".").append(string3)
+				.append(".").append(string4).toString());
+	}
+	
+	
 	
 	/**
 	 * 
