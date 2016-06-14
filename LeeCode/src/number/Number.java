@@ -9,6 +9,15 @@ public class Number {
 
 	}
 	
+	public static int trailingZeroes(int n) {
+		int result = 0;
+		while (n>0) {
+			n = n/5;
+			result = result + n;
+		}
+        return result;
+    }
+	
 	/**
 	 * check the number is happy or not
 	 * the process is endless or end in 1 
