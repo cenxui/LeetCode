@@ -11,6 +11,12 @@ public class Word {
 		System.out.println(isValid("()"));
 		
 	}
+	
+	/**
+	 * check if this string is valid with ([{ type
+	 * @param s the string we want to check
+	 * @return true if the string is valid type
+	 */
 
 	public static boolean isValid(String s) {
 		if (s.length()% 2 == 1) {
