@@ -1,6 +1,8 @@
 package words;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 public class Word {
@@ -8,9 +10,31 @@ public class Word {
 	private static String words = " 1";
 
 	public static void main(String[] arg) {
-		System.out.println(isValid("()"));
 		
+		System.out.println(isPalindrome("`l;`` 1o1 ??;l`"));
 	}
+	
+	public static boolean isPalindrome(String s) {
+        char[] chars = s.toCharArray();
+        List<Character> result = new ArrayList<>();
+        for (int i = 0; i < chars.length; i++) {
+			if (chars[i]>64 && chars[i] <91){
+				result.add(chars[i]);
+			}else if (chars[i]>96 && chars[i]<123) {
+				result.add((char)((int)chars[i]-32));
+			}else if (chars[i]>47 && chars[i]<58) {
+				result.add(chars[i]);
+			}		
+		}
+        
+        for (int i = 0; i < result.size()/2; i++) {
+			if (result.get(i) != result.get(result.size()-1-i)) {
+				return false;
+			}
+		}
+        
+        return true;
+    }
 	
 	/**
 	 * check if this string is valid with ([{ type
