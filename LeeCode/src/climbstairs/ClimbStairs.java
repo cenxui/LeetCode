@@ -2,6 +2,11 @@ package climbstairs;
 
 public class ClimbStairs {
 	
+	/**
+	 * get the numbers of method to climb stairs 
+	 * @param n the numbers of stairs
+	 * @return the method we will get
+	 */
 	public int climbStairs(int n) {
         return climb(n,0,1);
     }
