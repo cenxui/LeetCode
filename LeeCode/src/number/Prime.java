@@ -1,65 +1,54 @@
 package number;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Ignore;
 
 public class Prime {
 
 	public static void main(String[] args) {
 		long temp = System.currentTimeMillis();
-		System.out.println(countPrimes(500000));	
+		System.out.println(countPrimes(5000000));	
 		System.out.println(System.currentTimeMillis() - temp);
 
 	}
 	
 	/**
+	 * 
+	 * 348513
+3066
 	 * this method is too slow
 	 * @param n
 	 * @return
 	 */
-	@Ignore
-	public static int countPrimes(int n) {		
-		if (n<=1) {
+	public static int countPrimes(int n) {
+		if (n <= 2) {
 			return 0;
 		}
-
-		if (n == 2) {
+		
+		if (n == 3) {
 			return 1;
 		}
-
-		if (n == 3 || n == 4) {
-			return 2;
-		}
 		
-		if (n == 5) {
-			return 3;
-		}
-		
-		int size  = n;
-		if (n>1000) {
-			size = n/4;
-		}
-		
-		int[] resultArray = new int[size];
-		resultArray[0] = 2;
-		resultArray[1] = 3;
-		int length = 2;
-		int check = 5;
-		boolean isPrime;
-		while (check <= n) {
-			isPrime = true;			
-			for (int i = 1; i < length; i++) {
-				if (check % resultArray[i] == 0) {
-					isPrime = false;
-					break;
-				}
+		int count = 2;
+		List<Integer> list = new ArrayList<>();
+		list.add(3);
+		for (int i = 5; i < n; i = i+2) {
+			if (isPrime(i, list)) {
+				list.add(i);
+				count++;
 			}
-			if (isPrime == true) {
-				resultArray[length] = check;
-				length++;
-			}
-			check = check +2;
 		}
-				
-        return length;
+		return count;
     }
+	
+	public static boolean  isPrime(int num, List<Integer> list ) {	
+		for (int i = 0; list.get(i)*list.get(i)<= num && i<list.size(); i++) {
+			if (num %list.get(i) == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
