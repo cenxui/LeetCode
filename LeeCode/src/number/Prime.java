@@ -15,10 +15,7 @@ public class Prime {
 	}
 	
 	/**
-	 * 
-	 * 348513
-3066
-	 * this method is too slow
+	 *  count the prime number lower than n
 	 * @param n
 	 * @return
 	 */
