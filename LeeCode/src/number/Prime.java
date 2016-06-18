@@ -3,8 +3,6 @@ package number;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Ignore;
-
 public class Prime {
 
 	public static void main(String[] args) {
@@ -31,6 +29,7 @@ public class Prime {
 		int count = 2;
 		List<Integer> list = new ArrayList<>();
 		list.add(3);
+		
 		for (int i = 5; i < n; i = i+2) {
 			if (isPrime(i, list)) {
 				list.add(i);
