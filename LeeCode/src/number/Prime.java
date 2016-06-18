@@ -3,8 +3,6 @@ package number;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Ignore;
-
 public class Prime {
 
 	public static void main(String[] args) {
