@@ -3,20 +3,47 @@ package power;
 public class Power {
 
 	public static void main(String[] args) {
-		System.out.println(myPow(3, 5));
+		System.out.println(myPow(34.00515,-3));
 		
 	}
-	/**
-	 * wrong method
-	 * @param x
-	 * @param n
-	 * @return
-	 */
-	@Deprecated
+	
+	
 	public static double myPow(double x, int n) {
+		if (n  == 0) {
+			return 1;
+		}
+		if (n == 1) {
+			return x;
+		}
+		
+		if (x == 1) {
+			return 1;
+		}
+		
+		if (n == Integer.MIN_VALUE && x>0 ) {
+			return 0;
+		}		
+		
+		if (n<0) {
+			x = 1/x;
+			n = -1*n;
+		}
+		
+		int time = (int)Math.sqrt(n);
+		int remain = n - time*time;
 		double result = 1;
-		for (int i = n; i>0; i>>= 1) {
-			
+		double temp = 1;
+		
+		for (int i = 0; i<time;i++) {
+			temp = x*temp;
+		}
+		
+		for (int i = 0; i<time; i++) {
+			result = temp *result;
+		}
+		
+		for (int i = 0; i<remain; i++) {
+			result = x*result;
 		}
 		
 		return result;
