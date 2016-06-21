@@ -117,7 +117,7 @@ public class Subsets {
 	 * @param nums
 	 * @return
 	 */
-	
+	@Deprecated
 	public static List<List<Integer>> threeSum(int[] nums) {
 		
 		List<List<Integer>> list = subsets(3, nums);
@@ -136,7 +136,7 @@ public class Subsets {
     }
 	
 	/**
-	 * 
+	 * get all the subset with length of subsetLength form nums
 	 * @param sebsetLength the subsetLength
 	 * @param nums the main array
 	 * @return the subsets are length {@value sebsetLength}
@@ -159,7 +159,7 @@ public class Subsets {
 	}
 	
 	/**
-	 * 
+	 * This method will create all 3 number subset of nums and add to list 
 	 * @param list the list to store sublist
 	 * @param index current position in nums
 	 * @param limit the desire subset size must smaller than nums.length
@@ -197,5 +197,18 @@ public class Subsets {
 			}			
 		}
 	}
+	
+	/**
+	 * we need to sort array to get correct answer
+	 * @param nums
+	 * @return
+	 */
+	public static List<List<Integer>> subsetsWithDup(int[] nums) {
+		Arrays.sort(nums);
+		
+		
+		
+		return null;		
+    }
 }
 
