@@ -12,6 +12,13 @@ public class Array {
 			System.out.print(array[i]);
 		}
 	}
+	
+	/**
+	 * Given an array of integers, 
+	 * every element appears twice except for one. Find that single one.
+	 * @param nums an array of integers
+	 * @return  that single one
+	 */
 
 	public static int singleNumber(int[] nums) {
 		Arrays.sort(nums);
@@ -31,9 +38,33 @@ public class Array {
 
 		return 0;
 	}
+	
+	/**
+	 * Given an array of integers, 
+	 * every element appears three times except for one. Find that single one. 
+	 * @param nums an array of integers
+	 * @return the single one
+	 */
 
 	public int singleNumberII(int[] nums) {
-
+		if (nums.length == 0 ) {
+			return 0;
+		}
+		
+		if (nums.length <3) {
+			return nums[0];
+		}
+		Arrays.sort(nums);
+		
+		for (int i = 0; i < nums.length-1; i= i+3) {
+			if (nums[i] != nums[i+1]) {
+				return nums[i];
+			}
+		}
+		if (nums[nums.length - 1] != nums[nums.length - 2]) {
+			return nums[nums.length - 1];
+		}
+		
 		return 0;
 	}
 
