@@ -12,12 +12,56 @@ public class BinaryTree {
 		treeNode.left = new TreeNode(2);
 		treeNode.right = new TreeNode(3);
 		treeNode.right.left = new TreeNode(5);
-		TreeNode treeNode2 = copyTree(treeNode);
 		
-		System.out.println(isSameTree(treeNode, treeNode2));
 		
-		System.out.println(maxDepth(treeNode));		
+		
 	}
+	/**
+	 * Given a binary tree containing digits from 0-9 only, 
+	 * each root-to-leaf path could represent a number.
+	 * An example is the root-to-leaf path 1->2->3 which represents the number 123.
+	 * Find the total sum of all root-to-leaf numbers
+	 * Example The root-to-leaf path 1->2 represents the number 12.
+	 * The root-to-leaf path 1->3 represents the number 13.
+	 * Return the sum = 12 + 13 = 25.  
+	 * @param root
+	 * @return the sum of all root to leaf numbers
+	 */
+	
+	public static int sumNumbers(TreeNode root) {
+        if (root == null ) {
+			return 0;
+		}       
+        return sumNumbers(root, 0);
+    }
+	/**
+	 * 
+	 * @param treeNode
+	 * @param sum
+	 * @return
+	 */
+	
+	private static int sumNumbers(TreeNode treeNode, int sum) {
+		if (treeNode.left == null && treeNode.right == null) {
+			return sum*10 + treeNode.val;
+		}
+		
+		if (treeNode.left != null && treeNode.right == null) {
+			return sumNumbers(treeNode.left, sum*10 + treeNode.val);
+		}
+		
+		if (treeNode.left == null && treeNode.right != null) {
+			return sumNumbers(treeNode.right, sum*10 + treeNode.val);
+		}
+		return sumNumbers(treeNode.left, sum*10 + treeNode.val)+sumNumbers(treeNode.right, sum*10 + treeNode.val);
+	}
+	
+	
+	/**
+	 * get all level of tree in the order bottom 
+	 * @param root the tree we want to get order
+	 * @return the result of the tree count level from bottom 
+	 */
 	
 	public static List<List<Integer>> levelOrderBottom(TreeNode root) {
 		List<List<Integer>> result = new Stack<>();
