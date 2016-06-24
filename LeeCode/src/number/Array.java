@@ -1,23 +1,65 @@
 package number;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Array {
 
 	public static void main(String[] args) {
-		int[] array = { 1, 1, 2, 3, 3, 4, 5, 6 };
+		int[] array = { 1, 2, 3, 4 };
 
-		System.out.println(removeDuplicates(array));
-		for (int i = 0; i < array.length; i++) {
-			System.out.print(array[i]);
+		List<List<Integer>> list = permute(array);
+		System.out.println(list);
+	}
+
+	/**
+	 * Given a collection of distinct numbers, return all possible permutations.
+	 * For example, [1,2,3] have the following permutations: 
+	 * [ [1,2,3],
+	 *   [1,3,2],
+	 *   [2,1,3], 
+	 *   [2,3,1],
+	 *   [3,1,2], 
+	 *   [3,2,1] ]
+	 * 
+	 * @param nums
+	 * @return
+	 */
+
+	public static List<List<Integer>> permute(int[] nums) {
+		List<List<Integer>> result = new ArrayList<>();
+		if (nums == null || nums.length == 0) {
+			return result;
+		}
+
+		LinkedList<Integer> list = new LinkedList<>();
+		addPremute(nums, 0, list, result);
+
+		return result;
+	}
+
+	private static void addPremute(int[] nums, int index, List<Integer> list, List<List<Integer>> result) {
+		if (nums.length == index) {
+			result.add(list);
+			return;
+		}
+		List<Integer> temp;
+		for (int i = 0; i <= index; i++) {
+			temp = new LinkedList<>(list);
+			temp.add(i, nums[index]);
+			addPremute(nums, index + 1, temp, result);
 		}
 	}
-	
+
 	/**
-	 * Given an array of integers, 
-	 * every element appears twice except for one. Find that single one.
-	 * @param nums an array of integers
-	 * @return  that single one
+	 * Given an array of integers, every element appears twice except for one.
+	 * Find that single one.
+	 * 
+	 * @param nums
+	 *            an array of integers
+	 * @return that single one
 	 */
 
 	public static int singleNumber(int[] nums) {
@@ -38,34 +80,44 @@ public class Array {
 
 		return 0;
 	}
-	
+
 	/**
-	 * Given an array of integers, 
-	 * every element appears three times except for one. Find that single one. 
-	 * @param nums an array of integers
+	 * Given an array of integers, every element appears three times except for
+	 * one. Find that single one.
+	 * 
+	 * @param nums
+	 *            an array of integers
 	 * @return the single one
 	 */
 
 	public int singleNumberII(int[] nums) {
-		if (nums.length == 0 ) {
+		if (nums.length == 0) {
 			return 0;
 		}
-		
-		if (nums.length <3) {
+
+		if (nums.length < 3) {
 			return nums[0];
 		}
 		Arrays.sort(nums);
-		
-		for (int i = 0; i < nums.length-1; i= i+3) {
-			if (nums[i] != nums[i+1]) {
+
+		for (int i = 0; i < nums.length - 1; i = i + 3) {
+			if (nums[i] != nums[i + 1]) {
 				return nums[i];
 			}
 		}
 		if (nums[nums.length - 1] != nums[nums.length - 2]) {
 			return nums[nums.length - 1];
 		}
-		
+
 		return 0;
+	}
+
+	public int[] singleNumberIII(int[] nums) {
+		if (nums == null || nums.length < 2) {
+			return nums;
+		}
+
+		return null;
 	}
 
 	public int[] plusOne(int[] digits) {
