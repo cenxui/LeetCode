@@ -1,5 +1,10 @@
 package intersection;
 
+/**
+ * 
+ * @author xenxui
+ * @since 2016/6/30
+ */
 public class IntersectionTwoArrays {
 
 	public static void main(String[] args) {
