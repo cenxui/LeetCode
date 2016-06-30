@@ -5,6 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * 
+ * @author xenxui
+ * @since 2016/5/31
+ */
+
 public class AddDigitTest {
 	AddDigit add;
 	int Number = 9;
