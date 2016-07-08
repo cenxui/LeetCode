@@ -2,17 +2,94 @@ package number;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Array {
 
 	public static void main(String[] args) {
-		int[] array = { 1, 2, 3, 4 };
-
-		List<List<Integer>> list = permute(array);
-		System.out.println(list);
+		int[] array = {1,2};
+		topKFrequent(array, 2);
 	}
+	
+	public static List<List<Integer>> permuteUnique(int[] nums) {
+		List<List<Integer>> result = new ArrayList<>();
+		if (nums == null || nums.length == 0) {
+			return result;
+		}
+        class Key {
+        	int val;
+        	int nums = 1;
+        }
+        Arrays.sort(nums);
+        List<Key> list = new ArrayList<>();
+        Key key = new Key();
+        key.val = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+        	if (nums[i] != key.val) {
+				key = new Key();
+				key.val = nums[i];
+				list.add(key);
+			}else {
+				key.nums++;
+			}
+		}               
+        
+        
+        return result;
+    }
+	/**
+	 * Given a non-empty array of integers, 
+	 * return the k most frequent elements.
+	 * For example,Given [1,1,1,2,2,3] and k = 2, return [1,2].
+	 * @param nums
+	 * @param k
+	 * @return
+	 */
+	public static List<Integer> topKFrequent(int[] nums, int k) {
+		Arrays.sort(nums);
+		class Value {
+			int value;
+			int number;
+		}
+		List<Value> resultList = new ArrayList<>();
+		
+		int check = nums[0];
+		int index = 0;
+		Value value = new Value();
+		value.value = check;
+		value.number = 0;
+		resultList.add(value);
+		
+		for (int i = 0; i<nums.length; i++) {
+			if (nums[i]== check && i != (nums.length-1)) {
+				resultList.get(index).number++;
+			}else {			
+				value = new Value();
+				check = nums[i];
+				value.value = check;
+				value.number = 1;
+				resultList.add(value);				
+				index++;
+			}
+		}
+		
+		Comparator<Value> comparator = (a,b) -> {
+			if (a.number == b.number) {
+				return 0;
+			}
+			return a.number>b.number? 1:-1;
+		};
+		
+		Collections.sort(resultList, comparator);
+		List<Integer> result = new ArrayList<>();
+		for (int i = 1; i<=k; i++) {
+			result.add(resultList.get(resultList.size()-i).value);
+		}
+        return result;
+    }
 
 	/**
 	 * Given a collection of distinct numbers, return all possible permutations.
