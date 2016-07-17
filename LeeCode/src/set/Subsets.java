@@ -203,11 +203,16 @@ public class Subsets {
 	 * @param nums
 	 * @return
 	 */
+
 	public static List<List<Integer>> subsetsWithDup(int[] nums) {
 		Arrays.sort(nums);
+			
+		for (int i = 0; i < nums.length; i++) {
+			
+		}
 		
-		
-		
+		List<List<Integer>> result =  new ArrayList<>();
+				
 		return null;		
     }
 }

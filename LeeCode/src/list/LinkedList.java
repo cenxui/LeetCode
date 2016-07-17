@@ -6,8 +6,13 @@ import java.util.Stack;
 
 import org.junit.Ignore;
 
+/**
+ * 
+ * @author xenxui
+ * @since 2016/5/30
+ */
 public class LinkedList {
-
+	
 	public static void main(String[] args) {
 
 		ListNode listNode = ListUtil.getListNode(1, 8);
