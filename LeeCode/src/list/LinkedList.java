@@ -39,8 +39,6 @@ public class LinkedList {
 			head = head.next;
 		}
 		
-		
-
 		int length = resultList.size();
 		if (length < n) {
 			return resultList.get(0);

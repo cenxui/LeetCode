@@ -9,10 +9,7 @@ public class ListUtil {
 		ListNode listNode = getListNode(5, 6);
 //		ListUtil.printLisNode(listNode);
 		ListNode l2 = getListNodeBuilder().append(1).append(2).append(3).append(4).toListNode();
-//		ListUtil.printLisNode(l2);
-		ListNode result = mergeTwoLists(listNode, l2);
-		
-		ListUtil.printLisNode(result);
+		System.out.println(l2);
 	}
 
 	/**
