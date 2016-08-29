@@ -4,6 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 
+ * @author xenxui
+ * 2016/8/29
+ * Given a collection of intervals, merge all overlapping intervals.
+ * For example,
+ * Given [1,3],[2,6],[8,10],[15,18],
+ * return [1,6],[8,10],[15,18]. 
+ */
+
 public class MergeInterval {
 	
 	public static void main(String[] args) {
