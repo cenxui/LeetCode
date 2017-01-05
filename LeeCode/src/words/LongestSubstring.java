@@ -6,7 +6,8 @@ public class LongestSubstring {
 		// TODO Auto-generated method stub
 
 	}
+
 	public int lengthOfLongestSubstring(String s) {
-        return 0;
-    }
+		return 0;
+	}
 }

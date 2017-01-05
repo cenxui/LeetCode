@@ -8,22 +8,23 @@ public class Number {
 		System.out.println(getSum(100, 1000));
 
 	}
-	
+
 	/**
-	 * 371. Sum of Two Integers
-	 * get sum with binary operation without "+" and "-" operation
-	 * @param a 
-	 * 		the integer number we want to add
-	 * @param b 
-	 * 		the integer number we want to add
+	 * 371. Sum of Two Integers get sum with binary operation without "+" and
+	 * "-" operation
+	 * 
+	 * @param a
+	 *            the integer number we want to add
+	 * @param b
+	 *            the integer number we want to add
 	 * @return the sum of a and b
 	 */
-	
-	public static int getSum(int a, int b) {		
+
+	public static int getSum(int a, int b) {
 		int result = 0;
 		int tempResult = 0;
 		boolean addMore = false;
-		for (int i = 0; i<32; i++) {
+		for (int i = 0; i < 32; i++) {
 			int tempA = 1 & a;
 			int tempB = 1 & b;
 			if (addMore) {
@@ -31,34 +32,33 @@ public class Number {
 					addMore = true;
 					tempResult = 1;
 					tempResult <<= i;
-				}else if (tempA == 0 && tempB == 0) {
+				} else if (tempA == 0 && tempB == 0) {
 					addMore = false;
 					tempResult = 1;
 					tempResult <<= i;
-				}else {
+				} else {
 					addMore = true;
 					tempResult = 0;
 				}
-			}else {
+			} else {
 				if (tempA == 1 && tempB == 1) {
 					addMore = true;
 					tempResult = 0;
-				}else if (tempA == 0 && tempB == 0) {
+				} else if (tempA == 0 && tempB == 0) {
 					addMore = false;
 					tempResult = 0;
-				}else {
+				} else {
 					addMore = false;
 					tempResult = 1;
 					tempResult <<= i;
 				}
 			}
-			a >>=1;
-			b >>=1;
-			result = result|tempResult;
+			a >>= 1;
+			b >>= 1;
+			result = result | tempResult;
 		}
-		return result;		
-    }
-	
+		return result;
+	}
 
 	/**
 	 * Given a positive integer n, break it into the sum of at least two
@@ -74,41 +74,41 @@ public class Number {
 		if (n == 1) {
 			return 1;
 		}
-		
+
 		if (n == 2) {
 			return 1;
 		}
-		
+
 		if (n == 3) {
 			return 2;
 		}
-		
+
 		if (n == 4) {
 			return 4;
 		}
-		
+
 		double temp = Math.sqrt(n);
 		int index = 0;
 		int logarithm = 0;
-		int remain = (int) (n -temp*temp);
-		if (remain <3 ) {
+		int remain = (int) (n - temp * temp);
+		if (remain < 3) {
 			index = (int) temp;
 			logarithm = (int) temp;
-		}else {
-			
+		} else {
+
 		}
 
-		int indexPlusOne = index+1;
+		int indexPlusOne = index + 1;
 		int result = 1;
-		
-		for (int i = 0; i<remain ;i++) {
-			result = result *indexPlusOne;
+
+		for (int i = 0; i < remain; i++) {
+			result = result * indexPlusOne;
 		}
-		
-		for (int i = 0; i<logarithm-remain;i++) {
-			result = result *index;
+
+		for (int i = 0; i < logarithm - remain; i++) {
+			result = result * index;
 		}
-		
+
 		return result;
 	}
 

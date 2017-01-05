@@ -3,11 +3,11 @@ package list;
 import java.util.Stack;
 
 public class ListUtil {
-	
+
 	public static void main(String[] args) {
 
 		ListNode listNode = getListNode(5, 6);
-//		ListUtil.printLisNode(listNode);
+		// ListUtil.printLisNode(listNode);
 		ListNode l2 = getListNodeBuilder().append(1).append(2).append(3).append(4).toListNode();
 		System.out.println(l2);
 	}
@@ -73,16 +73,19 @@ public class ListUtil {
 
 		return result;
 	}
-	
+
 	/**
-	 * merge to two sorted arrays to one sorted array 
-	 * @param l1 sorted array
-	 * @param l2 sorted array
+	 * merge to two sorted arrays to one sorted array
+	 * 
+	 * @param l1
+	 *            sorted array
+	 * @param l2
+	 *            sorted array
 	 * @return one sorted array contain {@value l1,l2} list node
 	 */
 
 	public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-		
+
 		/*
 		 * check all possible null point case
 		 */
@@ -97,9 +100,9 @@ public class ListUtil {
 		if (l1 == null && l2 != null) {
 			return l2;
 		}
-		
+
 		/*
-		 * let l1 be the head node 
+		 * let l1 be the head node
 		 */
 
 		ListNode result = l1;
@@ -121,20 +124,20 @@ public class ListUtil {
 				check = l1;
 				l1 = l1.next;
 			} else {
-				check.next = l2;		
+				check.next = l2;
 				l2 = l2.next;
-				check.next.next = l1;				
-				check = check.next;			
+				check.next.next = l1;
+				check = check.next;
 			}
 		}
 		/**
-		 * If l1 check complete but l2 don't start check
-		 * ,we need to add l2 to the list tail of l1.
+		 * If l1 check complete but l2 don't start check ,we need to add l2 to
+		 * the list tail of l1.
 		 */
 		if (l1 == null && l2 != null) {
 			check.next = l2;
 		}
-		
+
 		return result;
 	}
 

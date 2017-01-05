@@ -10,40 +10,40 @@ import java.util.List;
 public class Array {
 
 	public static void main(String[] args) {
-		int[] array = {1,2};
+		int[] array = { 1, 2 };
 		topKFrequent(array, 2);
 	}
-	
+
 	public static List<List<Integer>> permuteUnique(int[] nums) {
 		List<List<Integer>> result = new ArrayList<>();
 		if (nums == null || nums.length == 0) {
 			return result;
 		}
-        class Key {
-        	int val;
-        	int nums = 1;
-        }
-        Arrays.sort(nums);
-        List<Key> list = new ArrayList<>();
-        Key key = new Key();
-        key.val = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-        	if (nums[i] != key.val) {
+		class Key {
+			int val;
+			int nums = 1;
+		}
+		Arrays.sort(nums);
+		List<Key> list = new ArrayList<>();
+		Key key = new Key();
+		key.val = nums[0];
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[i] != key.val) {
 				key = new Key();
 				key.val = nums[i];
 				list.add(key);
-			}else {
+			} else {
 				key.nums++;
 			}
-		}               
-        
-        
-        return result;
-    }
+		}
+
+		return result;
+	}
+
 	/**
-	 * Given a non-empty array of integers, 
-	 * return the k most frequent elements.
+	 * Given a non-empty array of integers, return the k most frequent elements.
 	 * For example,Given [1,1,1,2,2,3] and k = 2, return [1,2].
+	 * 
 	 * @param nums
 	 * @param k
 	 * @return
@@ -55,51 +55,46 @@ public class Array {
 			int number;
 		}
 		List<Value> resultList = new ArrayList<>();
-		
+
 		int check = nums[0];
 		int index = 0;
 		Value value = new Value();
 		value.value = check;
 		value.number = 0;
 		resultList.add(value);
-		
-		for (int i = 0; i<nums.length; i++) {
-			if (nums[i]== check && i != (nums.length-1)) {
+
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == check && i != (nums.length - 1)) {
 				resultList.get(index).number++;
-			}else {			
+			} else {
 				value = new Value();
 				check = nums[i];
 				value.value = check;
 				value.number = 1;
-				resultList.add(value);				
+				resultList.add(value);
 				index++;
 			}
 		}
-		
-		Comparator<Value> comparator = (a,b) -> {
+
+		Comparator<Value> comparator = (a, b) -> {
 			if (a.number == b.number) {
 				return 0;
 			}
-			return a.number>b.number? 1:-1;
+			return a.number > b.number ? 1 : -1;
 		};
-		
+
 		Collections.sort(resultList, comparator);
 		List<Integer> result = new ArrayList<>();
-		for (int i = 1; i<=k; i++) {
-			result.add(resultList.get(resultList.size()-i).value);
+		for (int i = 1; i <= k; i++) {
+			result.add(resultList.get(resultList.size() - i).value);
 		}
-        return result;
-    }
+		return result;
+	}
 
 	/**
 	 * Given a collection of distinct numbers, return all possible permutations.
-	 * For example, [1,2,3] have the following permutations: 
-	 * [ [1,2,3],
-	 *   [1,3,2],
-	 *   [2,1,3], 
-	 *   [2,3,1],
-	 *   [3,1,2], 
-	 *   [3,2,1] ]
+	 * For example, [1,2,3] have the following permutations: [ [1,2,3], [1,3,2],
+	 * [2,1,3], [2,3,1], [3,1,2], [3,2,1] ]
 	 * 
 	 * @param nums
 	 * @return
@@ -131,9 +126,8 @@ public class Array {
 	}
 
 	/**
-	 * 136. Single Number
-	 * Given an array of integers, every element appears twice except for one.
-	 * Find that single one.
+	 * 136. Single Number Given an array of integers, every element appears
+	 * twice except for one. Find that single one.
 	 * 
 	 * @param nums
 	 *            an array of integers
@@ -145,7 +139,7 @@ public class Array {
 		if (length == 1) {
 			return nums[0];
 		}
-		
+
 		Arrays.sort(nums);
 
 		for (int i = 0; i < length - 1; i = i + 2) {
@@ -155,13 +149,12 @@ public class Array {
 		}
 
 		return nums[length - 1];
-		
+
 	}
 
 	/**
-	 * 137. Single Number II
-	 * Given an array of integers, every element appears three times except for
-	 * one. Find that single one.
+	 * 137. Single Number II Given an array of integers, every element appears
+	 * three times except for one. Find that single one.
 	 * 
 	 * @param nums
 	 *            an array of integers
@@ -177,7 +170,7 @@ public class Array {
 		if (length < 3) {
 			return nums[0];
 		}
-		
+
 		Arrays.sort(nums);
 
 		for (int i = 0; i < length - 1; i = i + 3) {
@@ -185,7 +178,7 @@ public class Array {
 				return nums[i];
 			}
 		}
-		
+
 		if (nums[length - 1] != nums[length - 2]) {
 			return nums[length - 1];
 		}
@@ -194,10 +187,9 @@ public class Array {
 	}
 
 	/**
-	 * 260. Single Number III
-	 * Given an array of numbers nums, in which exactly two elements appear only once 
-	 * and all the other elements appear exactly twice. 
-	 * Find the two elements that appear only once.
+	 * 260. Single Number III Given an array of numbers nums, in which exactly
+	 * two elements appear only once and all the other elements appear exactly
+	 * twice. Find the two elements that appear only once.
 	 * 
 	 * @param nums
 	 *            an array of integers
@@ -205,41 +197,41 @@ public class Array {
 	 */
 	public int[] singleNumberIII(int[] nums) {
 		boolean exist1 = false;
-        int[] result = new int[2];
-        int length = nums.length;
-        
+		int[] result = new int[2];
+		int length = nums.length;
+
 		if (nums == null || length < 2) {
 			return nums;
 		}
-        
-        Arrays.sort(nums);
-        
-        for(int i=0; i<length-1;) {
-            if(nums[i] == nums[i+1]) {
-                i+=2;
-                if(i == length-1) {
-                    result[1] = nums[i];
-                    break;
-                }
-                continue;
-            }
-            
-            if(!exist1) {
-                result[0] = nums[i];
-                exist1 = true;
-                if(i == length-2) {
-                    result[1] = nums[i+1];
-                    break;
-                } else {
-                    i++;
-                }
-            } else {
-                result[1] = nums[i];
-                break;
-            }
-        }
-        
-        return result;
+
+		Arrays.sort(nums);
+
+		for (int i = 0; i < length - 1;) {
+			if (nums[i] == nums[i + 1]) {
+				i += 2;
+				if (i == length - 1) {
+					result[1] = nums[i];
+					break;
+				}
+				continue;
+			}
+
+			if (!exist1) {
+				result[0] = nums[i];
+				exist1 = true;
+				if (i == length - 2) {
+					result[1] = nums[i + 1];
+					break;
+				} else {
+					i++;
+				}
+			} else {
+				result[1] = nums[i];
+				break;
+			}
+		}
+
+		return result;
 	}
 
 	public int[] plusOne(int[] digits) {
