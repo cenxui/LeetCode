@@ -204,11 +204,42 @@ public class Array {
 	 * @return an array of two elements that appear only once
 	 */
 	public int[] singleNumberIII(int[] nums) {
-		if (nums == null || nums.length < 2) {
+		boolean exist1 = false;
+        int[] result = new int[2];
+        int length = nums.length;
+        
+		if (nums == null || length < 2) {
 			return nums;
 		}
-
-		return null;
+        
+        Arrays.sort(nums);
+        
+        for(int i=0; i<length-1;) {
+            if(nums[i] == nums[i+1]) {
+                i+=2;
+                if(i == length-1) {
+                    result[1] = nums[i];
+                    break;
+                }
+                continue;
+            }
+            
+            if(!exist1) {
+                result[0] = nums[i];
+                exist1 = true;
+                if(i == length-2) {
+                    result[1] = nums[i+1];
+                    break;
+                } else {
+                    i++;
+                }
+            } else {
+                result[1] = nums[i];
+                break;
+            }
+        }
+        
+        return result;
 	}
 
 	public int[] plusOne(int[] digits) {
