@@ -73,4 +73,30 @@ public class Bit {
 		}
 		return result.toString();
 	}
+	
+	/**
+	 * 461. Hamming Distance
+	 * The Hamming distance between two integers is the number of positions 
+	 * at which the corresponding bits are different.
+	 * 
+	 * Note: 0 ≤ x, y < 2^31
+	 * 
+	 * @param x
+	 * 			integer used to calculate the Hamming distance
+	 * @param y
+	 * 			integer used to calculate the Hamming distance
+	 * @return total numbers of positions where the corresponding bits are different
+	 */
+	public int hammingDistance(int x, int y) {
+        int distance = 0;
+        for(int i=0; i<32; i++) {
+            if((x & 1) != (y & 1)) {
+                distance++;
+            }
+            x >>= 1;
+            y >>= 1;
+        }
+        
+        return distance;
+    }
 }
