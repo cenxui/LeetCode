@@ -131,6 +131,7 @@ public class Array {
 	}
 
 	/**
+	 * 136. Single Number
 	 * Given an array of integers, every element appears twice except for one.
 	 * Find that single one.
 	 * 
@@ -140,25 +141,25 @@ public class Array {
 	 */
 
 	public static int singleNumber(int[] nums) {
-		Arrays.sort(nums);
-		if (nums.length == 1) {
+		int length = nums.length;
+		if (length == 1) {
 			return nums[0];
 		}
+		
+		Arrays.sort(nums);
 
-		for (int i = 0; i < nums.length - 1; i = i + 2) {
+		for (int i = 0; i < length - 1; i = i + 2) {
 			if (nums[i] != nums[i + 1]) {
 				return nums[i];
 			}
 		}
 
-		if (nums[nums.length - 1] != nums[nums.length - 2]) {
-			return nums[nums.length - 1];
-		}
-
-		return 0;
+		return nums[length - 1];
+		
 	}
 
 	/**
+	 * 137. Single Number II
 	 * Given an array of integers, every element appears three times except for
 	 * one. Find that single one.
 	 * 
@@ -168,27 +169,40 @@ public class Array {
 	 */
 
 	public int singleNumberII(int[] nums) {
-		if (nums.length == 0) {
+		int length = nums.length;
+		if (length == 0) {
 			return 0;
 		}
 
-		if (nums.length < 3) {
+		if (length < 3) {
 			return nums[0];
 		}
+		
 		Arrays.sort(nums);
 
-		for (int i = 0; i < nums.length - 1; i = i + 3) {
+		for (int i = 0; i < length - 1; i = i + 3) {
 			if (nums[i] != nums[i + 1]) {
 				return nums[i];
 			}
 		}
-		if (nums[nums.length - 1] != nums[nums.length - 2]) {
-			return nums[nums.length - 1];
+		
+		if (nums[length - 1] != nums[length - 2]) {
+			return nums[length - 1];
 		}
 
 		return 0;
 	}
 
+	/**
+	 * 260. Single Number III
+	 * Given an array of numbers nums, in which exactly two elements appear only once 
+	 * and all the other elements appear exactly twice. 
+	 * Find the two elements that appear only once.
+	 * 
+	 * @param nums
+	 *            an array of integers
+	 * @return an array of two elements that appear only once
+	 */
 	public int[] singleNumberIII(int[] nums) {
 		if (nums == null || nums.length < 2) {
 			return nums;

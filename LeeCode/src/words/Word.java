@@ -276,4 +276,23 @@ public class Word {
 
 		return stringBuilder.toString();
 	}
+	
+	/**
+	 * 344. Reverse String
+	 * Write a function that takes a string as input and returns the string reversed.
+	 * Given s = "hello", return "olleh".
+	 * 
+	 * @param s
+	 * 		 a string to be reversed
+	 * @return reversed string
+	 */
+	public static String reverseString(String s) {
+		StringBuilder reverseS = new StringBuilder();
+        
+        for(int i=s.length()-1; i>=0; i--) {
+            reverseS.append(s.charAt(i));
+        }
+        
+        return reverseS.toString();
+	}
 }

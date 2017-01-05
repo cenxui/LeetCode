@@ -10,9 +10,12 @@ public class Number {
 	}
 	
 	/**
+	 * 371. Sum of Two Integers
 	 * get sum with binary operation without "+" and "-" operation
-	 * @param a the integer number we want to add
-	 * @param b the integer number we want to add
+	 * @param a 
+	 * 		the integer number we want to add
+	 * @param b 
+	 * 		the integer number we want to add
 	 * @return the sum of a and b
 	 */
 	
@@ -95,11 +98,6 @@ public class Number {
 			
 		}
 
-		
-		 
-		
-		
-		
 		int indexPlusOne = index+1;
 		int result = 1;
 		
@@ -138,7 +136,6 @@ public class Number {
 	 *            the number we ant to check
 	 * @return true if the number is happy
 	 */
-
 	public static boolean isHappy(int n) {
 		ArrayList<Integer> arrayList;
 		while (n > 9) {

@@ -9,6 +9,19 @@ public class Bit {
 		}
 	}
 	
+	/**
+	 * 338. Counting Bits
+	 * Given a non negative integer number num.
+	 * For every numbers i in the range 0 ≤ i ≤ num 
+	 * calculate the number of 1's in their binary representation 
+	 * and return them as an array.
+	 * 
+	 * For num = 5 you should return [0,1,1,2,1,2].
+	 * 
+	 * @param num
+	 * 			a non negative integer number num
+	 * @return an array of number of 1's in 0 to num's binary representation
+	 */
 	public int[] countBits(int num) {
         int[] result = new int[num+1];
         for (int i = 0; i < result.length; i++) {
