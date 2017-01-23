@@ -10,7 +10,8 @@ public class Bit {
 	}
 
 	/**
-	 * 338. Counting Bits Given a non negative integer number num. For every
+	 * 338. Counting Bits 
+	 * Given a non negative integer number num. For every
 	 * numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their
 	 * binary representation and return them as an array.
 	 * 
@@ -73,7 +74,8 @@ public class Bit {
 	}
 
 	/**
-	 * 461. Hamming Distance The Hamming distance between two integers is the
+	 * 461. Hamming Distance 
+	 * The Hamming distance between two integers is the
 	 * number of positions at which the corresponding bits are different.
 	 * 
 	 * Note: 0 ≤ x, y < 2^31

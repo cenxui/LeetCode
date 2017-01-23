@@ -126,7 +126,8 @@ public class Array {
 	}
 
 	/**
-	 * 136. Single Number Given an array of integers, every element appears
+	 * 136. Single Number 
+	 * Given an array of integers, every element appears
 	 * twice except for one. Find that single one.
 	 * 
 	 * @param nums
@@ -153,7 +154,8 @@ public class Array {
 	}
 
 	/**
-	 * 137. Single Number II Given an array of integers, every element appears
+	 * 137. Single Number II 
+	 * Given an array of integers, every element appears
 	 * three times except for one. Find that single one.
 	 * 
 	 * @param nums
@@ -187,7 +189,8 @@ public class Array {
 	}
 
 	/**
-	 * 260. Single Number III Given an array of numbers nums, in which exactly
+	 * 260. Single Number III 
+	 * Given an array of numbers nums, in which exactly
 	 * two elements appear only once and all the other elements appear exactly
 	 * twice. Find the two elements that appear only once.
 	 * 

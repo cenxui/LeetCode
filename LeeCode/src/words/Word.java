@@ -280,7 +280,8 @@ public class Word {
 	}
 
 	/**
-	 * 344. Reverse String Write a function that takes a string as input and
+	 * 344. Reverse String 
+	 * Write a function that takes a string as input and
 	 * returns the string reversed. Given s = "hello", return "olleh".
 	 * 
 	 * @param s

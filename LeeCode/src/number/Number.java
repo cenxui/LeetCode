@@ -10,8 +10,8 @@ public class Number {
 	}
 
 	/**
-	 * 371. Sum of Two Integers get sum with binary operation without "+" and
-	 * "-" operation
+	 * 371. Sum of Two Integers
+	 *  get sum with binary operation without "+" and "-" operation
 	 * 
 	 * @param a
 	 *            the integer number we want to add
