@@ -129,6 +129,14 @@ public class Number {
 	}
 
 	/**
+	 * 202. Happy Number
+	 * A happy number is a number defined by the following process: 
+	 * Starting with any positive integer, replace the number by 
+	 * the sum of the squares of its digits, and repeat the process 
+	 * until the number equals 1 (where it will stay), or it loops endlessly 
+	 * in a cycle which does not include 1.
+	 * 
+	 * Those numbers for which this process ends in 1 are happy numbers.
 	 * check the number is happy or not the process is endless or end in 1 if
 	 * number lower than 10 it can be check if it is happy or not
 	 * 
@@ -136,38 +144,37 @@ public class Number {
 	 *            the number we ant to check
 	 * @return true if the number is happy
 	 */
-	public static boolean isHappy(int n) {
-		ArrayList<Integer> arrayList;
-		while (n > 9) {
-			arrayList = new ArrayList<>();
-			while (n > 0) {
-				arrayList.add((n % 10));
-				n = n / 10;
-			}
-			n = square(arrayList);
-			System.out.println(n);
-		}
-
-		if (n == 1) {
-			return true;
-		}
-
-		if (n == 7) {
-			return true;
-		}
-
-		return false;
-	}
-
-	private static int square(ArrayList<Integer> arrayList) {
-		int sum = 0;
-		int temp;
-		for (int i = 0; i < arrayList.size(); i++) {
-			temp = arrayList.get(i);
-			sum = sum + temp * temp;
-		}
-		return sum;
-	}
+	public boolean isHappy(int n) {
+        if(n == 1 || n== 7) {
+            return true;
+        }
+        
+        int sum = getSquare(n);
+        
+        return (sum == 1 || sum == 7)? true : false;
+    }
+    
+    private int getSquare(int n) {
+        int sum = 0;
+        int temp = 0;
+        
+        while(n>9) {
+            temp = n%10;
+            sum += temp*temp;
+            n = n/10;
+            if(n<=9) {
+                sum += n*n;
+                if(sum<10) {
+                    return sum;
+                }
+                
+                n = sum;
+                sum = 0;
+            }
+        }
+        
+        return sum;
+    }
 
 	public static int romanToInt(String s) {
 		int res = 0;
