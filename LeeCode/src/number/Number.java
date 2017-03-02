@@ -149,12 +149,12 @@ public class Number {
             return true;
         }
         
-        int sum = getSquare(n);
+        int sum = square(n);
         
         return (sum == 1 || sum == 7)? true : false;
     }
     
-    private int getSquare(int n) {
+    private int square(int n) {
         int sum = 0;
         int temp = 0;
         
