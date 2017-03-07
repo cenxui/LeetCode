@@ -12,15 +12,15 @@ import org.junit.Ignore;
  * @since 2016/5/30
  */
 public class LinkedList {
-	
+
 	public static void main(String[] args) {
 
 		ListNode listNode = ListUtil.getListNode(1, 8);
-		
+
 		System.out.println("removeNthFromEnd");
-		
-		removeNthFromEnd(listNode,1);
-		
+
+		removeNthFromEnd(listNode, 1);
+
 		ListUtil.printLisNode(listNode);
 	}
 
@@ -38,7 +38,7 @@ public class LinkedList {
 			resultList.add(head);
 			head = head.next;
 		}
-		
+
 		int length = resultList.size();
 		if (length < n) {
 			return resultList.get(0);
@@ -47,16 +47,15 @@ public class LinkedList {
 		if (length == 1 && n == 1) {
 			return null;
 		}
-		
+
 		if (n == 1) {
-			resultList.get(length-2).next = null;
+			resultList.get(length - 2).next = null;
 			return resultList.get(0);
 		}
-		
-		if (length == 2 && n == 2) {		
+
+		if (length == 2 && n == 2) {
 			return resultList.get(1);
 		}
-		
 
 		if (length == n) {
 			resultList.get(0).val = resultList.get(1).val;

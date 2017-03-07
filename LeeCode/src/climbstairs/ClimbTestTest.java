@@ -15,6 +15,6 @@ public class ClimbTestTest {
 
 	@Test
 	public void test() {
-		assertEquals(8, mClimStairs.climbStairs(5),0);
+		assertEquals(8, mClimStairs.climbStairs(5), 0);
 	}
 }

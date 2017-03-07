@@ -14,6 +14,7 @@ import org.junit.Test;
 public class AddDigitTest {
 	AddDigit add;
 	int Number = 9;
+
 	@Before
 	public void setUp() throws Exception {
 		add = new AddDigit();
@@ -21,7 +22,7 @@ public class AddDigitTest {
 
 	@Test
 	public void test() {
-		assertEquals(9, add.addDigits(Number),0);
+		assertEquals(9, add.addDigits(Number), 0);
 	}
 
 }

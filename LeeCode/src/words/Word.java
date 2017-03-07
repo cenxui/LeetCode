@@ -10,40 +10,42 @@ public class Word {
 	private static String words = " 1";
 
 	public static void main(String[] arg) {
-		
+
 		System.out.println(isPalindrome("`l;`` 1o1 ??;l`"));
 	}
-	
+
 	public static boolean isPalindrome(String s) {
-        char[] chars = s.toCharArray();
-        List<Character> result = new ArrayList<>();
-        for (int i = 0; i < chars.length; i++) {
-			if (chars[i]>64 && chars[i] <91){
+		char[] chars = s.toCharArray();
+		List<Character> result = new ArrayList<>();
+		for (int i = 0; i < chars.length; i++) {
+			if (chars[i] > 64 && chars[i] < 91) {
 				result.add(chars[i]);
-			}else if (chars[i]>96 && chars[i]<123) {
-				result.add((char)((int)chars[i]-32));
-			}else if (chars[i]>47 && chars[i]<58) {
+			} else if (chars[i] > 96 && chars[i] < 123) {
+				result.add((char) ((int) chars[i] - 32));
+			} else if (chars[i] > 47 && chars[i] < 58) {
 				result.add(chars[i]);
-			}		
+			}
 		}
-        
-        for (int i = 0; i < result.size()/2; i++) {
-			if (result.get(i) != result.get(result.size()-1-i)) {
+
+		for (int i = 0; i < result.size() / 2; i++) {
+			if (result.get(i) != result.get(result.size() - 1 - i)) {
 				return false;
 			}
 		}
-        
-        return true;
-    }
-	
+
+		return true;
+	}
+
 	/**
 	 * check if this string is valid with ([{ type
-	 * @param s the string we want to check
+	 * 
+	 * @param s
+	 *            the string we want to check
 	 * @return true if the string is valid type
 	 */
 
 	public static boolean isValid(String s) {
-		if (s.length()% 2 == 1) {
+		if (s.length() % 2 == 1) {
 			return false;
 		}
 		char[] chars = s.toCharArray();
@@ -275,5 +277,24 @@ public class Word {
 		}
 
 		return stringBuilder.toString();
+	}
+
+	/**
+	 * 344. Reverse String 
+	 * Write a function that takes a string as input and
+	 * returns the string reversed. Given s = "hello", return "olleh".
+	 * 
+	 * @param s
+	 *            a string to be reversed
+	 * @return reversed string
+	 */
+	public static String reverseString(String s) {
+		StringBuilder reverseS = new StringBuilder();
+
+		for (int i = s.length() - 1; i >= 0; i--) {
+			reverseS.append(s.charAt(i));
+		}
+
+		return reverseS.toString();
 	}
 }

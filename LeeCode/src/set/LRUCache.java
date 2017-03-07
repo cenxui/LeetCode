@@ -6,16 +6,16 @@ public class LRUCache {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	public LRUCache(int capacity) {
-        
-    }
-    
-    public int get(int key) {
-        return -1;
-    }
-    
-    public void set(int key, int value) {
-        
-    }
+
+	}
+
+	public int get(int key) {
+		return -1;
+	}
+
+	public void set(int key, int value) {
+
+	}
 }

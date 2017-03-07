@@ -528,7 +528,7 @@ public class BinaryTree {
 	 * 
 	 * @param treeNode
 	 */
-	
+
 	public static void preorder(TreeNode treeNode) {
 		if (treeNode == null) {
 			return;
@@ -542,8 +542,8 @@ public class BinaryTree {
 	 * inorder method of binary tree
 	 * 
 	 * @param treeNode
-	 */	
-	
+	 */
+
 	public static void inorder(TreeNode treeNode) {
 		if (treeNode == null) {
 			return;
@@ -558,7 +558,7 @@ public class BinaryTree {
 	 * 
 	 * @param treeNode
 	 */
-	
+
 	public static void postorder(TreeNode treeNode) {
 		if (treeNode == null) {
 			return;
