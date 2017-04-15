@@ -278,6 +278,38 @@ public class Word {
 
 		return stringBuilder.toString();
 	}
+	
+	/**
+	 * 557. Reverse Words in a String III
+	 * Given a string, you need to reverse the order of characters in each word 
+	 * within a sentence while still preserving whitespace and initial word order.
+	 * Given s = "hello world", return "olleh dlrow".
+	 * 
+	 * @param s
+	 * 			In the string, each word is separated by single space 
+	 * 			and there will not be any extra space in the string
+	 * @return
+	 * 			reversed words in String s
+	 */
+	public static String reverseWordsIII(String s) {
+        int start = 0;
+        int end = 0;
+        boolean firstWord = true;
+        StringBuilder b = new StringBuilder();
+        for(int i=0; i<s.length(); i++) {
+            if(Character.isWhitespace(s.charAt(i)) || i == s.length()-1) {
+                start = firstWord ? 0 : end+1;
+                end = i == s.length()-1? i+1 : i;
+                firstWord = false;
+                b.append(new StringBuilder().append(s.substring(start, end)).reverse());
+                if(i != s.length()-1) {
+                    b.append(" ");
+                }
+            }
+        }
+        
+        return b.toString();
+    }
 
 	/**
 	 * 344. Reverse String 
@@ -297,4 +329,44 @@ public class Word {
 
 		return reverseS.toString();
 	}
+	
+	/**
+	 * 541. Reverse String II
+	 * Reverse the first k characters for every 2k characters counting from 
+	 * the start of the string. If there are less than k characters left, 
+	 * reverse all of them. If there are less than 2k but greater than or 
+	 * equal to k characters, then reverse the first k characters and left 
+	 * the other as original.
+	 * 
+	 * @param s
+	 * 			a string to be reversed
+	 * @param k
+	 * 			Integer that s should reverse k characters for every 2k characters
+	 * @return
+	 * 			reversed string
+	 */
+	public String reverseStr(String s, int k) {
+        int len = s.length();
+        if(len == 1 || k == 1) {
+            return s;
+        }
+        StringBuilder sb = new StringBuilder();
+        if(len <= k) {
+            return sb.append(s).reverse().toString();
+        }
+        
+        for(int i=0; i<len; i+=k*2) {
+            int end = len-i<k ? len : i+k;
+            StringBuilder subToReverse = new StringBuilder().append(s.substring(i, end)).reverse();
+            sb.append(subToReverse.toString());
+            
+            if(len-i < k*2 && len-i > k) {
+                sb.append(s.substring(i+k, len));
+            } else if(len-i >= k*2) {
+                sb.append(s.substring(i+k, i+k*2));
+            }
+        }
+        
+        return sb.toString();
+    }
 }
