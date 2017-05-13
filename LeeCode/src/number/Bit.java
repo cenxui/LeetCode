@@ -12,7 +12,7 @@ public class Bit {
 	/**
 	 * 338. Counting Bits 
 	 * Given a non negative integer number num. For every
-	 * numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their
+	 * numbers i in the range 0 <= i <= num calculate the number of 1's in their
 	 * binary representation and return them as an array.
 	 * 
 	 * For num = 5 you should return [0,1,1,2,1,2].
@@ -41,6 +41,15 @@ public class Bit {
 		return sum;
 	}
 
+	/**
+	 * 67. Add Binary
+	 * Given two binary strings, return their sum (also a binary string).
+	 * @param a
+	 * 			binary string to be added
+	 * @param b
+	 * 			binary string to be added
+	 * @return	sum of two binary string
+	 */
 	public static String addBinary(String a, String b) {
 		long result = stringToByte(a) + stringToByte(b);
 		return byteToString(result);
@@ -72,13 +81,54 @@ public class Bit {
 		}
 		return result.toString();
 	}
+	
+	// Other way for 67. Add Binary
+	public static String addBinary2(String a, String b) {
+        StringBuilder sum = new StringBuilder();
+        boolean more = false;
+        String longS = a.length() >= b.length()? a : b;
+        String shortS = a.length() >= b.length()? b : a;
+        
+        for(int i=longS.length()-1,j=shortS.length()-1; i>=0; i--,j--) {
+            char c = j<0 ? '0' : shortS.charAt(j);
+            if(more) {
+                if(longS.charAt(i) == '1' && c == '1') {
+                    sum.append(1);
+                    more = true;
+                } else if(longS.charAt(i) == '0' && c == '0') {
+                    sum.append(1);
+                    more = false;
+                } else {
+                    sum.append(0);
+                    more = true;
+                }
+            } else {
+                if(j<0) {
+                    sum.append(longS.charAt(i));
+                } else if(longS.charAt(i) == '1' && c == '1') {
+                    sum.append(0);
+                    more = true;
+                } else if(longS.charAt(i) == '0' && c == '0') {
+                    sum.append(0);
+                    more = false;
+                } else {
+                    sum.append(1);
+                    more = false;
+                }
+            }
+        }
+        
+        sum = more? sum.append(1) : sum;
+        
+        return sum.reverse().toString();
+    }
 
 	/**
 	 * 461. Hamming Distance 
 	 * The Hamming distance between two integers is the
 	 * number of positions at which the corresponding bits are different.
 	 * 
-	 * Note: 0 ≤ x, y < 2^31
+	 * Note: 0 <= x, y < 2^31
 	 * 
 	 * @param x
 	 *            integer used to calculate the Hamming distance
