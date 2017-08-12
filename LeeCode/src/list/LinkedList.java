@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import org.junit.Ignore;
-
 /**
  * 
  * @author xenxui
@@ -166,7 +164,6 @@ public class LinkedList {
 	 * @param listNode
 	 * @return
 	 */
-	@Ignore
 	public static ListNode getCycleListNode(ListNode listNode) {
 		return null;
 	}
