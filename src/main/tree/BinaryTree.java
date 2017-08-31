@@ -575,7 +575,7 @@ public class BinaryTree {
 	 *
 	 */
 
-	private static class TreeNode {
+	public static class TreeNode {
 		private int val;
 		private TreeNode left;
 		private TreeNode right;
