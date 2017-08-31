@@ -570,12 +570,12 @@ public class BinaryTree {
 
 	/**
 	 * TreeNode class is standard tree node type
-	 * 
+	 *
 	 * @author xenxui
 	 *
 	 */
 
-	public static class TreeNode {
+	private static class TreeNode {
 		private int val;
 		private TreeNode left;
 		private TreeNode right;

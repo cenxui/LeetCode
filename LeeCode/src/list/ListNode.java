@@ -14,18 +14,18 @@ public class ListNode {
 	ListNode(int x) {
 		this.val = x;
 	}
-
-	@Override
-	public String toString() {
-		StringBuilder result = new StringBuilder();
-		result.append("->").append(this.val);
-
-		if (this.next != null) {
-			result.append(this.next);
-		}
-
-		return result.toString();
-	}
+//
+//	@Override
+//	public String toString() {
+//		StringBuilder result = new StringBuilder();
+//		result.append("->").append(this.val);
+//
+//		if (this.next != null) {
+//			result.append(this.next);
+//		}
+//
+//		return result.toString();
+//	}
 
 	@Override
 	public boolean equals(Object obj) {
