@@ -1,61 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe64e24c-e1c8-4843-8f14-285fecc07199" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/LeetCode.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/adddigit/AddDigit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/array/CheckPossibility.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/climbstairs/ClimbStairs.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/intersection/IntersectionTwoArrays.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/intersection/IntersectionTwoArraysI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/list/LinkedList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/list/ListNode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/list/ListNodeBuilder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/list/ListUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/list/MinimumTotal.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/list/ReorderList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/list/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/Area.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/Array.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/Bit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/DivideInteger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/FindComplement.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/HouseRobber.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/IsPossibleSpilt.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/MergeInterval.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/MoveZeroes.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/Number.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/Prime.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/Reverse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/SingleNumberIII.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/Sudoku.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/number/UglyNumber.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/power/Power.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/prefix/Dictionaries.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/prefix/Dictionary.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/set/LRUCache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/set/MinStack.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/set/MyQueue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/set/MyStack.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/set/Subsets.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/set/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/tree/BinaryTree.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/tree/BinaryTreeUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/tree/ValidBST.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/tree/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/twosum/TwoSum.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/words/BullsCows.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/words/LongestSubstring.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/words/SolutionCircle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/words/StringCompare.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/words/Word.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LeetCode/src/main/words/package-info.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="fe64e24c-e1c8-4843-8f14-285fecc07199" name="Default" comment="clean">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/adddigit/AddDigit.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/array/CheckPossibility.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/climbstairs/ClimbStairs.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/intersection/IntersectionTwoArrays.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/intersection/IntersectionTwoArraysI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/list/LinkedList.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/list/ListNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/list/ListNodeBuilder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/list/ListUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/list/MinimumTotal.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/list/ReorderList.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/list/package-info.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/Area.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/Array.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/Bit.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/DivideInteger.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/FindComplement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/HouseRobber.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/IsPossibleSpilt.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/MergeInterval.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/MoveZeroes.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/Number.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/Prime.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/Reverse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/SingleNumberIII.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/Sudoku.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/number/UglyNumber.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/power/Power.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/prefix/Dictionaries.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/prefix/Dictionary.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/set/LRUCache.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/set/MinStack.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/set/MyQueue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/set/MyStack.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/set/Subsets.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/set/package-info.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/tree/BinaryTree.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/tree/BinaryTreeUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/tree/ValidBST.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/tree/package-info.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/twosum/TwoSum.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/words/BullsCows.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/words/LongestSubstring.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/words/SolutionCircle.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/words/StringCompare.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/words/Word.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/words/package-info.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -632,12 +625,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504156487174</updated>
-      <workItem from="1504156488620" duration="252000" />
+      <workItem from="1504156488620" duration="316000" />
     </task>
+    <task id="LOCAL-00001" summary="clean">
+      <created>1504156759638</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1504156759638</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252000" />
+    <option name="totallyTimeSpent" value="316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="37" width="1400" height="757" extended-state="0" />
@@ -677,6 +678,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="clean" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
