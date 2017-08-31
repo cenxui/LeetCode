@@ -3,9 +3,19 @@ package prefix;
 import java.util.*;
 
 public class Dictionary {
-
+    /**
+     * hash set has some properties for prefix dictionary
+     * 1. sort in alphabetically
+     * 2. no duplicated word.
+     */
     private Set<String> names = new HashSet<>();
-    private Map<String, Dictionary> prefixMap = new HashMap<>();
+
+    /**
+     * hash map
+     * key Character as the prefix
+     * value the sub dictionary for it.
+     */
+    private Map<Character, Dictionary> prefixMap = new HashMap<>();
 
     Dictionary() {
 
@@ -19,7 +29,7 @@ public class Dictionary {
         names.add(name);
         Dictionary dictionary = this;
         for (int i = 0; i < words.length; i++) {
-            String key =  String.valueOf(words[i]);
+            Character key =  Character.valueOf(words[i]);
             if (dictionary.prefixMap.containsKey(key) == false) {
                 dictionary.prefixMap.put(key, new Dictionary());
             }
@@ -40,11 +50,13 @@ public class Dictionary {
         return names;
     }
 
-    public boolean isPrefixExist(String prefix) {
+    public boolean isPrefixExist(Character prefix) {
         return prefixMap.containsKey(prefix);
     }
 
-    public Dictionary getDictionary(String prefix) {
+    public Dictionary getDictionary(Character prefix) {
+        if (prefixMap.containsKey(prefix) == false) throw new NullPointerException("There is no names for this prefix");
+
         return prefixMap.get(prefix);
     }
 

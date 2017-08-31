@@ -13,7 +13,7 @@ public final class Dictionaries {
         return dictionary.getNames();
     }
 
-    public Dictionary getDictionary(String prefix) {
+    public Dictionary getDictionary(Character prefix) {
         return dictionary.getDictionary(prefix);
     }
 }

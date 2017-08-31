@@ -11,10 +11,10 @@ public class DictionaryTest {
         dictionary.addName("bo");
 
         System.out.println(dictionary);
-        System.out.println(dictionary.getDictionary("a"));
-        System.out.println(dictionary.getDictionary("b"));
-        System.out.println(dictionary.getDictionary("a").getDictionary("p").getDictionary("l"));
-        System.out.println(dictionary.getDictionary("b").getDictionary("k"));
+        System.out.println(dictionary.getDictionary('a'));
+        System.out.println(dictionary.getDictionary('b'));
+        System.out.println(dictionary.getDictionary('a').getDictionary('p').getDictionary('l'));
+        System.out.println(dictionary.getDictionary('b').getDictionary('k'));
 
     }
 }
